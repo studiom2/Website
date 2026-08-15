@@ -19,6 +19,8 @@ De analyse beschrijft uitsluitend wat in de opgeslagen homepage-HTML en bijbehor
 
 De bron is een functionele referentie, geen ontwerp- of contenttemplate. Teksten, vormgeving, branding, claims, bedrijfsgegevens en code worden niet gekopieerd.
 
+**Discovery-update 2026-08-15:** Studio m2-aanbevelingen in dit document zijn bijgewerkt met door de projecteigenaar aangeleverde bedrijfsinformatie. De analyse van wat op de Bommelsvloeren-snapshot zichtbaar is, is niet gewijzigd. Het masterplan blijft leidend bij eventuele verschillen.
+
 ## 1. Samenvatting
 
 Bommelsvloeren combineert een duidelijke lokale specialisatie met veel herhaalde conversieroutes. De homepage werkt als een lange landingspagina: aanbod, advies aan huis, voorbeeldvloeren, projecten, reviews, vakmanschap, lokale SEO-content en een afsluitende offerte-CTA volgen elkaar logisch op.
@@ -85,17 +87,17 @@ Header en footer staan buiten onderstaande elf `main`-secties.
 
 | # | Sectie | Doel | Content en interactie | CTA | Mogelijke toepassing Studio m2 |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Hero met twee nevencategorieën | Direct aanbod, regio en vervolgstap duidelijk maken | Grote visgraatafbeelding met H1; daarnaast kaarten voor laminaat en tapijt; hover/beeldzoom | Collectie bekijken; gratis adviesgesprek; categorie-links | Eén heldere waardepropositie, echte project-/busfoto, primaire afspraak-CTA en secundaire vloerenroute; alleen bevestigde vloersoorten tonen |
+| 1 | Hero met twee nevencategorieën | Direct aanbod, regio en vervolgstap duidelijk maken | Grote visgraatafbeelding met H1; daarnaast kaarten voor laminaat en tapijt; hover/beeldzoom | Collectie bekijken; gratis adviesgesprek; categorie-links | Eén heldere waardepropositie, echte project-/busfoto, primaire contact-CTA en secundaire vloerenroute; alleen bevestigde vloersoorten tonen |
 | 2 | USP-strip | Bezwaren vroeg wegnemen | Vier compacte voordelen over advies, voorbereiding, afwerking en snelheid | Geen | 3–4 gevalideerde USP's; rijdende showroom als eerste punt; geen levertermijnclaim zonder bevestiging |
 | 3 | Merkenmarquee | Merkvertrouwen en assortimentbreedte tonen | Bewegende, dubbel weergegeven merkenlijst | Geen | Alleen gebruiken bij bevestigde merken en toestemming; anders weglaten |
 | 4 | Vloercategorieën | Oriëntatie op type/patroon ondersteunen | Introductie plus vier visuele categoriekaarten met afbeelding en korte uitleg | Volledige collectie en categorie-anchors | Informatieve vloerenhub met categoriekaarten, geen Shopify-producten |
-| 5 | Gratis advies aan huis | Adviespropositie uitleggen en converteren | Foto, uitleg over selectie, stalen, locatiebezoek en werkgebied | Adviesgesprek aanvragen | Omvormen tot prominente rijdende-showroomsectie met busfoto, voordelen, verwachtingen en afspraak-CTA |
-| 6 | Nieuwe/bestseller-vloeren | Concrete dessins en prijsoriëntatie tonen | Vier productachtige kaarten met naam, categorie, korte beschrijving en prijs per m² | Per kaart een offerte-link; link naar alle dessins | Niet overnemen als productcatalogus; eventueel inspiratievoorbeelden zonder prijs, SKU of productlogica |
+| 5 | Gratis advies aan huis | Adviespropositie uitleggen en converteren | Foto, uitleg over selectie, stalen, locatiebezoek en werkgebied | Adviesgesprek aanvragen | Omvormen tot prominente rijdende-showroomsectie binnen het normale verkooptraject; eerst sturen op bellen/WhatsApp, niet op een los gratis inspectieproduct |
+| 6 | Nieuwe/bestseller-vloeren | Concrete dessins en prijsoriëntatie tonen | Vier productachtige kaarten met naam, categorie, korte beschrijving en prijs per m² | Per kaart een offerte-link; link naar alle dessins | Eventueel vertalen naar CMS-beheerde prijs-/inspiratiekaarten zonder Shopify-products; inhoud en prijzen nog te bepalen |
 | 7 | Recente projecten | Vakmanschap bewijzen | Drie foto's met projectnaam, plaats, jaar en categorie | Alle projecten | Projectkaarten met echte foto's en gevalideerde metadata; detailpagina's alleen indien genoeg content beschikbaar is |
 | 8 | Reviews | Sociaal bewijs leveren | Score, zichtbaar reviewaantal, vier reviewcards met sterren, tekst, naam/foto en relatieve datum | Alle reviews | Reviewsectie en eventueel reviewoverzicht, uitsluitend met bron, toestemming en actuele data |
 | 9 | Vakmanschap / over | Merkverhaal en kwaliteitsperceptie versterken | Werkfoto, vakmanschapsverhaal en herhaalde Google-score | Ons verhaal | Menselijk verhaal over werkwijze/vakmanschap; claims pas na bedrijfsdiscovery |
 | 10 | Informatieve lokale SEO-content | Zoekintentie beantwoorden en lokale relevantie vergroten | Uitleg over een vloertype en regio's in twee tekstkolommen | Geen | Unieke, behulpzame content over bevestigde vloersoorten en werkgebied; geen plaatsnamen overnemen |
-| 11 | Afsluitende CTA | Bezoeker na de volledige bewijsopbouw laten converteren | Korte samenvatting van advies aan huis | Offerte aanvragen | Afspraak voor rijdende showroom als primaire actie; offerte als mogelijke vervolgstap [NOG TE BEPALEN] |
+| 11 | Afsluitende CTA | Bezoeker na de volledige bewijsopbouw laten converteren | Korte samenvatting van advies aan huis | Offerte aanvragen | Bellen/WhatsApp als primaire contactroutes; offerte of stalenbezoek als vervolgstap |
 
 ## 4. Navigatie en informatiearchitectuur
 
@@ -158,7 +160,7 @@ Secundaire routes zijn:
 
 ### 5.3 Aanbeveling Studio m2
 
-Gebruik één primaire terminologie, bijvoorbeeld “Plan de rijdende showroom” of “Maak een afspraak aan huis” [NOG TE BEPALEN]. Een offerte kan een vervolgstap of secundaire CTA zijn. Bellen en WhatsApp blijven nuttige snelroutes als de eigenaar die kan en wil opvolgen.
+De primaire conversie is persoonlijk contact, met bellen en WhatsApp als belangrijkste routes. Offerte- of afspraakaanvragen zijn secundair. De website hoeft geen volledige afspraakplanning af te handelen: Studio m2 bespreekt de situatie en wensen persoonlijk en bepaalt daarna of een stalenbezoek, showroomafspraak of offerte passend is.
 
 De opgeslagen homepage bevat geen formulier. De velden, validatie, privacytoestemming, verzendroute en bevestiging van `/contact` kunnen dus niet uit deze bron worden geanalyseerd.
 
@@ -176,7 +178,7 @@ Technisch aandachtspunt in de bron:
 
 - De `LocalBusiness` structured data bevat `aggregateRating.reviewCount: 5`, terwijl de pagina zichtbaar 55 beoordelingen vermeldt. Dat is inconsistent en moet bij Studio m2 worden voorkomen.
 
-Voor Studio m2 zijn reviewscore, aantal, tekst, namen, foto's en bron allemaal `[NOG TE BEPALEN]`. Publiceer geen reviews zonder geldige bron en toestemming. Als live synchronisatie niet beschikbaar is, moet handmatig beheer een duidelijke actualisatiedatum en eigenaar krijgen.
+Voor Studio m2 zijn momenteel nog geen reviews beschikbaar. De website moet beheerbare reviewfunctionaliteit krijgen, maar mag geen reviewscore, reviewaantal of testimonials tonen voordat echte reviews met geldige bron en toestemming beschikbaar zijn. Als live synchronisatie niet beschikbaar is, moet handmatig beheer een duidelijke actualisatiedatum en eigenaar krijgen.
 
 ## 7. Projecten
 
@@ -204,16 +206,17 @@ Bommelsvloeren gebruikt twee presentatieniveaus:
 1. Categoriekaarten voor visgraat, rechte plank, Hongaarse punt en betonlook/PVC-tegels.
 2. Productachtige inspiratiekaarten met dessin, categorie, beschrijving en prijs per m².
 
-Voor Studio m2 is het eerste niveau bruikbaar. Het tweede niveau past niet bij de huidige scope, omdat er geen Shopify-producten, prijzen of webshoplogica komen.
+Voor Studio m2 is het eerste niveau bruikbaar. Het tweede niveau kan worden vertaald naar CMS-beheerde prijs-/inspiratiekaarten, zolang daarvoor geen Shopify-producten, varianten, winkelwagen of checkout worden gebruikt.
 
 Vertaling naar Studio m2:
 
 - Maak `Vloeren` een informatieve hub.
 - Gebruik categoriekaarten voor uitsluitend bevestigde vloersoorten.
 - Geef per categorie uitleg over uitstraling, toepassing, aandachtspunten, mogelijke patronen en relevante projecten.
-- Gebruik sfeer-/projectbeelden als inspiratie, niet als bestelbare artikelen.
+- Gebruik sfeer-/projectbeelden en eventueel prijsinformatie als inspiratie, niet als bestelbare artikelen.
 - Koppel iedere categorie aan afspraak/contact, niet aan winkelwagen of checkout.
-- Beheer categorieën via pagina's, metaobjects en/of theme-editorcontent; de definitieve techniek volgt pas in M2-ARCH-001.
+- Beheer categorieën en eventuele inspiratiekaarten via pagina's, metaobjects en/of theme-editorcontent; de definitieve techniek volgt pas in M2-ARCH-001.
+- Publiceer geen kaarten voordat vloernamen, afbeeldingen, prijzen en prijsaanduiding zijn goedgekeurd.
 
 ## 9. Rijdende showroom / advies aan huis
 
@@ -226,14 +229,17 @@ Bommelsvloeren ondersteunt “gratis advies aan huis” op meerdere niveaus:
 - Afsluitende CTA.
 - Een service-aanbod in structured data.
 
-Studio m2 kan dit sterker en eigen maken door **Rijdende showroom** als vaste productnaam/propositie te gebruiken:
+Studio m2 kan dit sterker en eigen maken door **Rijdende showroom** als vaste propositie binnen het normale verkooptraject te gebruiken:
 
 - Toon de bus en vloerstaaltjes prominent met eigen fotografie.
-- Leg in drie korte stappen uit wat vóór, tijdens en na de afspraak gebeurt [NOG TE BEPALEN].
-- Benoem pas na bevestiging: kosten, duur, beschikbaarheid, werkgebied, aantal stalen en eventuele voorwaarden.
+- Leg uit dat eerst telefonisch of via WhatsApp de situatie en wensen worden besproken.
+- Bied een stalenbezoek aan bij serieuze interesse; presenteer dit niet als een los gratis technisch inspectiebezoek zonder koopintentie.
+- Leg vast dat een stalenbezoek kosteloos kan zijn binnen het normale verkooptraject en dat bij een serieus bezoek kosteloos een offerte kan worden gemaakt.
+- Benoem pas na bevestiging: duur, beschikbaarheid, definitief werkgebied, aantal stalen en eventuele voorwaarden.
 - Leg het klantvoordeel uit: materiaalkeuze en advies in de eigen woonomgeving.
-- Geef de propositie een eigen pagina en een primaire CTA vanuit header, hero en relevante vloerenpagina's.
-- Laat de contactroute context meenemen, bijvoorbeeld onderwerp “Rijdende showroom” [PROPOSED].
+- Geef de propositie een eigen pagina en duidelijke contactroutes vanuit header, hero en relevante vloerenpagina's.
+- Stuur primair op bellen of WhatsApp; een formulier kan context zoals “Rijdende showroom” meenemen [PROPOSED].
+- Een fysieke winkel/showroom kan uitsluitend op afspraak worden bezocht; de partnerconstructie hoeft niet publiek te worden uitgelegd.
 
 ## 10. SEO-analyse
 
@@ -337,24 +343,24 @@ Studio m2 moet motion subtiel inzetten, `prefers-reduced-motion` respecteren en 
 
 | Feature | Bommelsvloeren | Studio m2 gewenst? | Studio m2 implementatie | Prioriteit | Opmerking |
 | --- | --- | --- | --- | --- | --- |
-| Responsive sticky header | Ja | Ja | Compacte header met logo, navigatie en primaire afspraak-CTA | MUST | Mobiel en desktop toegankelijk testen |
+| Responsive sticky header | Ja | Ja | Compacte header met logo, navigatie en prominente bel-/WhatsApp-routes | MUST | Mobiel en desktop toegankelijk testen |
 | Desktop-topbar | Ja | Waarschijnlijk | Contact/trustbalk met alleen bevestigde data | SHOULD | Kan op mobiel vervallen |
-| Primaire CTA in header | Offerte | Ja | Afspraak rijdende showroom / aan huis [NOG TE BEPALEN] | MUST | Eén consistente primaire term kiezen |
-| Direct bellen | Ja | Te bevestigen | `tel:`-link op geschikte plekken | SHOULD | Alleen met bevestigd nummer en bereikbaarheid |
-| WhatsApp | Zwevende knop | Te bevestigen | Duidelijke `wa.me`-route met toegankelijk label | SHOULD | Alleen als opvolging organisatorisch geregeld is |
+| Primaire CTA in header | Offerte | Ja | Persoonlijk contact via bellen/WhatsApp | MUST | Definitief nummer nog bevestigen |
+| Direct bellen | Ja | Ja | `tel:`-link op geschikte plekken | MUST | Alleen met definitief bevestigd nummer en bereikbaarheid |
+| WhatsApp | Zwevende knop | Ja | Duidelijke `wa.me`-route met toegankelijk label | MUST | Definitief WhatsApp-nummer nog bevestigen |
 | Hero met fotografie | Ja | Ja | Eigen project- of busbeeld en eigen waardepropositie | MUST | Geen bronbeeld of broncopy gebruiken |
 | USP-strip | Vier USP's | Ja | 3–4 gevalideerde voordelen | MUST | Geen onbevestigde snelheid/garantieclaims |
-| Rijdende showroom | Als advies aan huis | Ja, sterker | Eigen prominente sectie plus detailpagina en CTA | MUST | Kernonderscheid van Studio m2 |
+| Rijdende showroom | Als advies aan huis | Ja, sterker | Eigen prominente sectie plus detailpagina binnen persoonlijk verkooptraject | MUST | Geen los gratis inspectieproduct |
 | Vloerencategorieën | Visuele categoriekaarten | Ja | Informatieve categoriekaarten/-pagina's | MUST | Alleen bevestigde soorten |
-| Shopify-productcatalogus | Productachtige kaarten | Nee | Geen products, prijzen, cart of checkout | NO | Past niet bij vastgesteld projectmodel |
-| Prijzen per m² | Ja | Niet nu | Geen prijzen tot expliciete goedkeuring | NO | Scope en prijsmodel onbekend |
-| Inspiratievoorbeelden | Ja | Ja | Niet-bestelbare sfeer-/projectvoorbeelden | SHOULD | Duidelijk scheiden van projecten |
+| Shopify-productcatalogus | Productachtige kaarten | Nee | Geen Shopify-products, cart of checkout; CMS-prijs-/inspiratiekaarten blijven mogelijk | NO | Past niet bij vastgesteld projectmodel |
+| Prijzen per m² | Ja | Mogelijk | CMS-beheerde prijs-/inspiratiekaarten zonder Shopify-products | SHOULD | Namen, prijzen, beelden en aanduiding nog te bepalen |
+| Inspiratievoorbeelden | Ja | Ja | Niet-bestelbare sfeer-/projectvoorbeelden, eventueel met prijs | SHOULD | Duidelijk scheiden van projecten |
 | Merkenmarquee | Ja | Mogelijk | Rustige merkvermelding of logo-overzicht | COULD | Merken en rechten eerst bevestigen |
 | Werkwijze | Via USP/copy | Ja | Duidelijke stappen van advies tot oplevering | MUST | Inhoud nog verzamelen |
 | Projectenoverzicht | Ja | Ja | Beheerbare kaarten met beeld en metadata | MUST | Echte Studio m2-projecten vereist |
 | Projectdetailpagina's | Niet aantoonbaar | Mogelijk | Detailcases als contentvolume voldoende is | COULD | SEO- en beheerlast afwegen |
-| Reviewsectie | Ja | Ja | Geverifieerde reviews met bron/toestemming | MUST | Geen score/aantal verzinnen |
-| Aparte reviewpagina | Ja | Waarschijnlijk | Overzicht of externe reviewroute [NOG TE BEPALEN] | SHOULD | Afhankelijk van beschikbare reviews |
+| Reviewsectie | Ja | Ja | Beheerbare functionaliteit; publiek verbergen tot echte reviews bestaan | MUST | Momenteel geen reviews beschikbaar |
+| Aparte reviewpagina | Ja | Waarschijnlijk later | Overzicht of externe reviewroute zodra voldoende reviews bestaan | SHOULD | Geen lege pagina of voorbeeldreviews publiceren |
 | Vakmanschaps-/over-sectie | Ja | Ja | Persoonlijk verhaal en bewijs | MUST | Bedrijfsinformatie nodig |
 | Lokale SEO-content | Ja | Ja | Unieke service-/regiocontent | MUST | Werkgebied eerst bevestigen |
 | FAQ-preview en pagina | Alleen route zichtbaar | Ja | Homepagepreview plus volledige FAQ | SHOULD | Vragen uit klantgesprekken verzamelen |
@@ -376,9 +382,10 @@ Studio m2 moet motion subtiel inzetten, `prefers-reduced-motion` respecteren en 
   - PVC
   - Visgraat
   - Hongaarse punt
-  - Rechte plank
-  - Laminaat
-  - Aanvullende soorten `[NOG TE BEPALEN]`
+  - Rechte plank / verband
+  - Laminaat `[TE BEVESTIGEN VOOR LAUNCH]`
+  - Traprenovatie `[TE BEVESTIGEN VOOR LAUNCH]`
+  - Overige vloeren `[NOG TE BEPALEN]`
 - Rijdende showroom
 - Projecten
 - Werkwijze
@@ -390,7 +397,8 @@ Studio m2 moet motion subtiel inzetten, `prefers-reduced-motion` respecteren en 
 
 Open punten:
 
-- De feitelijke vloersoorten moeten nog worden bevestigd.
+- De definitieve vloercategorieën en “overige vloeren” moeten nog worden bevestigd.
+- Laminaat en traprenovatie moeten als actueel websiteaanbod worden bevestigd.
 - Bepalen of patronen onder PVC vallen of zelfstandige pagina's verdienen.
 - Bepalen of “Contact / offerte” één pagina wordt en hoe de afspraakroute daarin landt.
 - Bepalen of projecten detailpagina's krijgen.
@@ -400,21 +408,22 @@ Open punten:
 
 **Status: PROPOSED — input voor M2-DISC-004 en M2-DES-001.**
 
-1. Header met compacte trust/contactinformatie en primaire afspraak-CTA.
-2. Hero met eigen waardepropositie, eigen fotografie en primaire rijdende-showroom-CTA.
-3. Korte USP-strip met uitsluitend bevestigde voordelen.
-4. Rijdende showroom: bus, stalen, klantvoordeel en afspraakroute.
-5. Vloersoorten: informatieve categoriekaarten zonder productlogica.
-6. Werkwijze: van eerste contact en advies tot leggen en nazorg `[NOG TE BEPALEN]`.
-7. Uitgelichte projecten met echte Studio m2-beelden.
-8. Reviews/social proof met gevalideerde brongegevens.
+1. Header met compacte trust/contactinformatie en prominente bel-/WhatsApp-routes.
+2. Hero met eigen waardepropositie, eigen fotografie en primaire contact-CTA.
+3. Positionering/USP-strip rond vakmanschap, betrouwbaarheid, brede mogelijkheden en volledige ontzorging.
+4. Rijdende showroom: bus, stalen, klantvoordeel en contactroute binnen het verkooptraject.
+5. Vloersoorten: informatieve categoriekaarten zonder Shopify-productlogica.
+6. Optioneel prijs-/inspiratiekaartenblok zonder Shopify-products `[PROPOSED]`.
+7. Volledige werkwijze van eerste contact en advies tot voorbereiding, leggen en afwerking.
+8. Uitgelichte projecten met echte Studio m2-beelden.
 9. Vakmanschap / Over Studio m2.
-10. Werkgebied en behulpzame lokale SEO-content op basis van bevestigd werkgebied.
-11. FAQ-preview met link naar alle vragen.
-12. Afsluitende CTA voor afspraak aan huis / rijdende showroom, met offerte als mogelijke secundaire route.
-13. Footer met navigatie, vloeren/diensten, contact, bedrijfsgegevens, socials en privacy.
+10. Reviews/social proof, alleen zichtbaar zodra echte reviews beschikbaar zijn.
+11. Werkgebied en behulpzame lokale SEO-content op basis van bevestigd launchwerkgebied.
+12. FAQ-preview met link naar alle vragen.
+13. Afsluitende contact-CTA: bellen/WhatsApp primair, offerte/afspraak secundair.
+14. Footer met navigatie, vloeren/diensten, contact, bedrijfsgegevens, socials en privacy.
 
-De definitieve volgorde hangt af van beschikbare fotografie, doelgroepinzichten, bedrijfsinformatie en de gekozen primaire conversie.
+De definitieve volgorde hangt af van beschikbare fotografie, doelgroepinzichten en resterende launchcontent.
 
 ## 17. WAT WE NIET OVERNEMEN
 
@@ -437,9 +446,10 @@ M2-DISC-002 kan op basis van deze analyse naar `DONE`. De referentie geeft voldo
 
 Nog nodig voordat sitemap, ontwerp of architectuur definitief kan worden:
 
-- Gevalideerde bedrijfsinformatie en werkgebied (M2-DISC-001).
-- Bevestigde vloersoorten, diensten en merken.
+- Resterende launchgegevens en content (M2-DISC-005).
+- Definitieve vloercategorieën, traprenovatie-/laminaatbevestiging en werkgebied.
 - Beschikbare project-, bus- en bedrijfsfotografie.
 - Beschikbare reviews en publicatierechten.
-- Keuze van primaire CTA en opvolgproces.
+- Definitief telefoon-/WhatsAppnummer, e-mailadres en opvolgdetails.
+- Definitieve prijsdata en prijsaanduiding voor eventuele inspiratiekaarten.
 - Aanvullende concurrentie-/positioneringsanalyse.
