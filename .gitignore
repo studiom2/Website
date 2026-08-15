@@ -15,3 +15,7 @@ node_modules/
 ## Release files
 release
 *.zip
+
+# Local reference website snapshots
+/PVC Visgraat Vloer Rotterdam _ Bommelsvloeren — Specialist Regio Rijnmond.html
+/PVC Visgraat Vloer Rotterdam _ Bommelsvloeren — Specialist Regio Rijnmond_files/
