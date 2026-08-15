@@ -23,6 +23,67 @@
     ]
   },
   {
+    "name": "t:general.business_details",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "t:labels.logo"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 80,
+        "max": 240,
+        "step": 10,
+        "unit": "px",
+        "label": "t:labels.logo_width",
+        "default": 150
+      },
+      {
+        "type": "text",
+        "id": "business_name",
+        "label": "t:labels.business_name",
+        "default": "Studio m2 vloeren"
+      },
+      {
+        "type": "text",
+        "id": "contact_phone",
+        "label": "t:labels.phone_display",
+        "default": "06-85887536"
+      },
+      {
+        "type": "text",
+        "id": "contact_phone_url",
+        "label": "t:labels.phone_url",
+        "default": "tel:+31685887536"
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_url",
+        "label": "t:labels.whatsapp_url",
+        "default": "https://wa.me/31685887536"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "t:labels.email",
+        "default": "studiom2vloeren@proton.me"
+      },
+      {
+        "type": "text",
+        "id": "instagram_url",
+        "label": "t:labels.instagram_url",
+        "default": "https://www.instagram.com/studiom2vloeren/"
+      },
+      {
+        "type": "text",
+        "id": "tiktok_url",
+        "label": "t:labels.tiktok_url"
+      }
+    ]
+  },
+  {
     "name": "t:general.layout",
     "settings": [
       {
@@ -31,15 +92,15 @@
         "label": "t:labels.page_width",
         "options": [
           {
-            "value": "90rem",
+            "value": "72rem",
             "label": "t:options.page_width.narrow"
           },
           {
-            "value": "110rem",
+            "value": "78rem",
             "label": "t:options.page_width.wide"
           }
         ],
-        "default": "90rem"
+        "default": "78rem"
       },
       {
         "type": "range",
@@ -49,7 +110,7 @@
         "step": 1,
         "unit": "px",
         "label": "t:labels.page_margin",
-        "default": 20
+        "default": 40
       }
     ]
   },
@@ -59,14 +120,32 @@
       {
         "type": "color",
         "id": "background_color",
-        "default": "#FFFFFF",
+        "default": "#F5F2EC",
         "label": "t:labels.background"
       },
       {
         "type": "color",
         "id": "foreground_color",
-        "default": "#333333",
+        "default": "#171713",
         "label": "t:labels.foreground"
+      },
+      {
+        "type": "color",
+        "id": "surface_color",
+        "default": "#FFFFFF",
+        "label": "t:labels.surface"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "default": "#B69A75",
+        "label": "t:labels.accent"
+      },
+      {
+        "type": "color",
+        "id": "muted_color",
+        "default": "#6D6A62",
+        "label": "t:labels.muted"
       },
       {
         "type": "range",

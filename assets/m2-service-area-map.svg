@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Schematisch werkgebied</title><desc id="desc">Subtiele abstracte kaart met een centraal punt en omliggende servicezones, zonder precieze locaties.</desc>
+  <defs><linearGradient id="bg" x1="99" y1="35" x2="909" y2="669" gradientUnits="userSpaceOnUse"><stop stop-color="#F7F3EC"/><stop offset="1" stop-color="#E0D6C8"/></linearGradient></defs>
+  <rect width="1000" height="700" fill="url(#bg)"/>
+  <path d="M157 115c92-67 207-57 279-31 68 24 126 12 212-8 97-22 176 13 203 87 29 79-11 151-14 213-4 86 72 130 32 205-46 84-158 74-250 48-92-25-147 25-247 25-111 0-245-44-263-143-17-89 71-130 57-208-13-70-67-143-9-188Z" fill="#D0C3B2" opacity=".62"/>
+  <path d="M145 454c96-52 164-44 247-10 79 33 154 50 241 13 87-37 136-82 233-65M268 94c22 77 1 144 52 207 46 56 102 79 93 167-7 74-48 123-43 181M709 89c-40 67-56 133-21 204 31 62 90 105 72 184-15 67-61 103-91 160" stroke="#F4EFE7" stroke-width="17" stroke-linecap="round"/>
+  <path d="M99 255c78 11 141 37 190 95 49 57 76 107 154 133 83 28 165 4 234-42 69-45 112-106 212-110" stroke="#B6A38A" stroke-width="4" stroke-dasharray="10 14"/>
+  <circle cx="505" cy="357" r="150" stroke="#B49773" stroke-width="3" opacity=".3"/><circle cx="505" cy="357" r="94" stroke="#B49773" stroke-width="3" opacity=".5"/>
+  <g fill="#B49773" stroke="#F7F3EC" stroke-width="8"><path d="M505 272c-48 0-86 38-86 86 0 67 86 151 86 151s86-84 86-151c0-48-38-86-86-86Zm0 120a35 35 0 1 1 0-70 35 35 0 0 1 0 70Z"/><circle cx="253" cy="253" r="19"/><circle cx="741" cy="237" r="19"/><circle cx="755" cy="508" r="19"/><circle cx="279" cy="530" r="19"/></g>
+  <g stroke="#B49773" stroke-width="3" stroke-dasharray="7 11" opacity=".8"><path d="M434 315 270 262M574 314l149-69M571 431l166 69M437 427l-142 94"/></g>
+</svg>

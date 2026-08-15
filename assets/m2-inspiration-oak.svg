@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Warm eiken interieur als vloerinspiratie</title><desc id="desc">Abstracte eetruimte met diep warme houttinten en een grafisch gelegde vloer.</desc>
+  <rect width="1000" height="800" fill="#D9CDBC"/>
+  <path d="M0 525h1000v275H0z" fill="#AA8965"/>
+  <g stroke="#6E5843" stroke-width="3" opacity=".55"><path d="M0 590h1000M0 655h1000M0 720h1000"/><path d="m20 525 110 275M178 525l89 275M335 525l66 275M492 525l40 275M649 525l15 275M807 525l-12 275M964 525l-38 275"/></g>
+  <rect x="106" y="91" width="292" height="310" rx="145" fill="#EEE8DE"/>
+  <path d="M252 92v308" stroke="#B99F7D" stroke-width="5"/>
+  <path d="M537 0v179M471 179h132l-29 84h-75l-28-84Z" fill="#2C2A25"/>
+  <ellipse cx="577" cy="482" rx="250" ry="59" fill="#6F5842"/>
+  <path d="M393 478 349 685M760 478l43 207" stroke="#2C2A25" stroke-width="18"/>
+  <g fill="#EFE8DD" stroke="#2C2A25" stroke-width="8"><path d="M250 455c0-59 34-107 76-107s76 48 76 107v142H250V455Z"/><path d="M754 455c0-59 34-107 76-107s76 48 76 107v142H754V455Z"/></g>
+  <path d="M273 583h108l-17 104h-74l-17-104ZM777 583h108l-17 104h-74l-17-104Z" fill="#8B7156"/>
+  <path d="M863 270v160" stroke="#2C2A25" stroke-width="10"/><path d="M810 232c8-45 33-76 53-84 10 50-7 82-53 84Zm53-84c43 15 64 48 64 91-44-8-70-45-64-91Z" fill="#78806E"/><path d="M818 425h92l-15 91h-62l-15-91Z" fill="#B79B77"/>
+</svg>

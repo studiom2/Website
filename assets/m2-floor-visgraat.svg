@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Visgraatvloer</title><desc id="desc">Grafisch detail van een warme houten vloer in klassiek visgraatpatroon.</desc>
+  <rect width="800" height="650" fill="#EDE6DC"/>
+  <g stroke="#755E48" stroke-width="3">
+    <g fill="#C5AA83"><path d="m-5 100 92-92 45 45-92 92z"/><path d="m87 8 92 92-45 45-92-92z"/><path d="m179 100 92-92 45 45-92 92z"/><path d="m271 8 92 92-45 45-92-92z"/><path d="m363 100 92-92 45 45-92 92z"/><path d="m455 8 92 92-45 45-92-92z"/><path d="m547 100 92-92 45 45-92 92z"/><path d="m639 8 92 92-45 45-92-92z"/><path d="m731 100 92-92 45 45-92 92z"/></g>
+    <g fill="#B79871"><path d="m-5 284 92-92 45 45-92 92z"/><path d="m87 192 92 92-45 45-92-92z"/><path d="m179 284 92-92 45 45-92 92z"/><path d="m271 192 92 92-45 45-92-92z"/><path d="m363 284 92-92 45 45-92 92z"/><path d="m455 192 92 92-45 45-92-92z"/><path d="m547 284 92-92 45 45-92 92z"/><path d="m639 192 92 92-45 45-92-92z"/><path d="m731 284 92-92 45 45-92 92z"/></g>
+    <g fill="#CCB38D"><path d="m-5 468 92-92 45 45-92 92z"/><path d="m87 376 92 92-45 45-92-92z"/><path d="m179 468 92-92 45 45-92 92z"/><path d="m271 376 92 92-45 45-92-92z"/><path d="m363 468 92-92 45 45-92 92z"/><path d="m455 376 92 92-45 45-92-92z"/><path d="m547 468 92-92 45 45-92 92z"/><path d="m639 376 92 92-45 45-92-92z"/><path d="m731 468 92-92 45 45-92 92z"/></g>
+    <g fill="#A98966"><path d="m-5 652 92-92 45 45-92 92z"/><path d="m87 560 92 92-45 45-92-92z"/><path d="m179 652 92-92 45 45-92 92z"/><path d="m271 560 92 92-45 45-92-92z"/><path d="m363 652 92-92 45 45-92 92z"/><path d="m455 560 92 92-45 45-92-92z"/><path d="m547 652 92-92 45 45-92 92z"/><path d="m639 560 92 92-45 45-92-92z"/><path d="m731 652 92-92 45 45-92 92z"/></g>
+  </g>
+  <rect x="12" y="12" width="776" height="626" stroke="#F8F5EF" stroke-width="24"/>
+</svg>

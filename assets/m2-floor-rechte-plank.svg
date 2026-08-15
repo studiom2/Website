@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Rechte plankenvloer</title><desc id="desc">Rustige, recht gelegde vloerplanken in verschillende warme houttonen.</desc>
+  <rect width="800" height="650" fill="#F0E9DF"/>
+  <g stroke="#775F49" stroke-width="3">
+    <path d="M-20 28h343v102H-20zM323 28h332v102H323zM655 28h190v102H655z" fill="#C9AE86"/>
+    <path d="M-115 130h310v103h-310zM195 130h387v103H195zM582 130h302v103H582z" fill="#B79770"/>
+    <path d="M-20 233h452v102H-20zM432 233h329v102H432zM761 233h116v102H761z" fill="#D0B892"/>
+    <path d="M-89 335h323v103H-89zM234 335h414v103H234zM648 335h210v103H648z" fill="#AD8E6B"/>
+    <path d="M-20 438h384v102H-20zM364 438h286v102H364zM650 438h203v102H650z" fill="#C3A57D"/>
+    <path d="M-122 540h294v103h-294zM172 540h409v103H172zM581 540h300v103H581z" fill="#B4946E"/>
+  </g>
+  <g stroke="#765D47" stroke-opacity=".2" stroke-width="4" stroke-linecap="round"><path d="M18 77h254M359 79h252M38 284h341M478 286h230M-2 387h186M277 388h318M28 491h288M408 490h195M215 592h314"/></g>
+  <rect x="12" y="12" width="776" height="626" stroke="#F8F5EF" stroke-width="24"/>
+</svg>

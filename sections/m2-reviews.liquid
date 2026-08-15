@@ -1,0 +1,52 @@
+{% liquid
+  assign valid_reviews = 0
+  for block in section.blocks
+    if block.settings.quote != blank
+      assign valid_reviews = valid_reviews | plus: 1
+    endif
+  endfor
+%}
+
+{% if section.settings.show_section %}
+  {% if valid_reviews > 0 %}
+    <section class="m2-section m2-reviews full-width" aria-labelledby="ReviewsHeading-{{ section.id }}">
+      <div class="m2-container">
+        <p class="m2-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        <h2 id="ReviewsHeading-{{ section.id }}">{{ section.settings.heading | escape }}</h2>
+        <div class="m2-reviews__grid">
+          {% for block in section.blocks %}
+            {% if block.settings.quote != blank %}<blockquote {{ block.shopify_attributes }}><p>“{{ block.settings.quote | escape }}”</p>{% if block.settings.name != blank %}<footer>{{ block.settings.name | escape }}</footer>{% endif %}</blockquote>{% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% elsif request.design_mode %}
+    <section class="m2-reviews-empty full-width"><div class="m2-container"><p>{{ section.settings.empty_state | escape }}</p></div></section>
+  {% endif %}
+{% endif %}
+
+{% stylesheet %}
+  .m2-reviews { background: var(--color-background); }
+  .m2-reviews h2 { max-width: 12ch; margin: 1rem 0 3.5rem; font-size: clamp(3.5rem, 6vw, 6.2rem); }
+  .m2-reviews__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .m2-reviews blockquote { margin: 0; padding: 2rem; border: 1px solid var(--color-border-light); border-radius: var(--radius-medium); background: var(--color-surface); box-shadow: var(--shadow-card); }
+  .m2-reviews blockquote p { font-family: var(--font-display-family); font-size: 1.45rem; line-height: 1.45; }
+  .m2-reviews blockquote footer { margin-top: 1.25rem; color: var(--color-muted); font-size: .7rem; }
+  .m2-reviews-empty { padding-block: 1rem; background: color-mix(in srgb, var(--color-accent) 15%, var(--color-background)); }
+  .m2-reviews-empty p { margin: 0; color: var(--color-muted); font-size: .72rem; text-align: center; }
+  @media screen and (max-width: 700px) { .m2-reviews__grid { grid-template-columns: 1fr; } }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:general.m2_reviews",
+  "settings": [
+    { "type": "checkbox", "id": "show_section", "label": "t:labels.show_section", "default": false },
+    { "type": "text", "id": "eyebrow", "label": "t:labels.eyebrow", "default": "Ervaringen" },
+    { "type": "text", "id": "heading", "label": "t:labels.heading", "default": "Wat klanten vertellen." },
+    { "type": "text", "id": "empty_state", "label": "t:labels.editor_empty_state", "default": "De reviewsectie blijft op de storefront verborgen totdat echte reviews zijn toegevoegd." }
+  ],
+  "blocks": [{ "type": "review", "name": "t:general.real_review", "settings": [{ "type": "textarea", "id": "quote", "label": "t:labels.review_text" }, { "type": "text", "id": "name", "label": "t:labels.source_name" }] }],
+  "presets": [{ "name": "t:general.m2_reviews" }]
+}
+{% endschema %}

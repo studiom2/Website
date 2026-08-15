@@ -1,0 +1,70 @@
+{% if section.settings.show_section %}
+  <section class="m2-section m2-floor-types full-width" id="vloeren">
+    <div class="m2-container">
+      <div class="m2-section-heading">
+        <div><h2>{{ section.settings.heading | escape }}</h2></div>
+        <div class="m2-section-heading__body">{{ section.settings.body }}</div>
+      </div>
+      <div class="m2-floor-types__grid">
+        {% for block in section.blocks %}
+          {% assign fallback_asset = block.settings.prototype_visual %}
+          <article class="m2-floor-card" {{ block.shopify_attributes }}>
+            <div class="m2-floor-card__media">
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '360, 540, 720, 900, 1000', sizes: '(min-width: 951px) 25vw, (min-width: 601px) 50vw, 100vw', alt: block.settings.image.alt }}
+              {% else %}
+                {% render 'm2-placeholder-visual', asset_name: fallback_asset, alt: block.settings.placeholder_label, width: 800, height: 650 %}
+              {% endif %}
+              <div class="m2-floor-card__topline"><span>0{{ forloop.index }}</span>{% if request.design_mode and section.settings.prototype_label != blank %}<small>{{ section.settings.prototype_label | escape }}</small>{% endif %}</div>
+            </div>
+            <div class="m2-floor-card__content">
+              <h3>{{ block.settings.heading | escape }}</h3>
+              <p>{{ block.settings.body | escape }}</p>
+              {% if block.settings.button_label != blank %}<a href="{% if block.settings.button_link != blank %}{{ block.settings.button_link }}{% elsif settings.whatsapp_url != blank %}{{ settings.whatsapp_url | escape }}{% else %}#contact{% endif %}">{{ block.settings.button_label | escape }} <span aria-hidden="true">↗</span></a>{% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% stylesheet %}
+  .m2-floor-types { background: var(--color-background); }
+  .m2-floor-types__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: start; gap: clamp(1rem, 2vw, 1.75rem); }
+  .m2-floor-card { overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--color-border-light); border-radius: var(--radius-medium); background: var(--color-surface); box-shadow: 0 .4rem 1.5rem transparent; transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease; }
+  .m2-floor-card:hover, .m2-floor-card:focus-within { border-color: color-mix(in srgb, var(--color-accent) 55%, transparent); box-shadow: var(--shadow-card); transform: translateY(-.35rem); }
+  .m2-floor-card__media { position: relative; overflow: hidden; background: color-mix(in srgb, var(--color-accent) 12%, var(--color-background)); }
+  .m2-floor-card__media > img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 500ms ease; }
+  .m2-floor-card:hover .m2-floor-card__media > img { transform: scale(1.025); }
+  .m2-floor-card__topline { position: absolute; inset: 1rem 1rem auto; display: flex; align-items: center; justify-content: space-between; }
+  .m2-floor-card__topline span { width: 2.2rem; height: 2.2rem; display: grid; place-items: center; border-radius: 50%; background: color-mix(in srgb, var(--color-surface) 88%, transparent); font-family: var(--font-display-family); font-size: .78rem; backdrop-filter: blur(8px); }
+  .m2-floor-card__topline small { padding: .4rem .6rem; border-radius: 999px; color: var(--color-muted); background: color-mix(in srgb, var(--color-surface) 86%, transparent); font-size: .52rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; backdrop-filter: blur(8px); }
+  .m2-floor-card__content { padding: 1.4rem; }
+  .m2-floor-card h3 { margin: 0 0 .6rem; font-size: 1.65rem; line-height: 1.1; }
+  .m2-floor-card p { margin: 0; color: var(--color-muted); font-size: .78rem; line-height: 1.65; }
+  .m2-floor-card__content > a { width: fit-content; min-height: 2.75rem; display: inline-flex; align-items: center; margin-top: .8rem; color: inherit; font-size: .7rem; font-weight: 700; letter-spacing: .04em; text-decoration: none; }
+  .m2-floor-card__content > a span { margin-left: .35rem; color: var(--color-accent-strong); }
+  .m2-floor-card__content > a:hover { text-decoration: underline; text-underline-offset: .3rem; }
+  @media screen and (max-width: 950px) {
+    .m2-floor-types__grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media screen and (max-width: 600px) {
+    .m2-floor-types__grid { grid-template-columns: minmax(0, 1fr); }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:general.m2_floor_types",
+  "settings": [
+    { "type": "checkbox", "id": "show_section", "label": "t:labels.show_section", "default": true },
+    { "type": "text", "id": "heading", "label": "t:labels.heading", "default": "Welke vloer past bij jou?" },
+    { "type": "richtext", "id": "body", "label": "t:labels.body", "default": "<p>Van rustige planken tot visgraat en Hongaarse punt. We laten je graag zien wat er mogelijk is.</p>" },
+    { "type": "text", "id": "prototype_label", "label": "t:labels.prototype_label", "default": "Tijdelijke visual" }
+  ],
+  "blocks": [{ "type": "floor", "name": "t:general.floor_type", "settings": [{ "type": "text", "id": "heading", "label": "t:labels.heading", "default": "PVC" }, { "type": "text", "id": "body", "label": "t:labels.body", "default": "Sterk, stil en makkelijk in onderhoud. Verkrijgbaar in veel kleuren en patronen." }, { "type": "image_picker", "id": "image", "label": "t:labels.image" }, { "type": "select", "id": "prototype_visual", "label": "t:labels.prototype_visual", "options": [{ "value": "m2-floor-pvc.svg", "label": "t:options.floor_visual.pvc" }, { "value": "m2-floor-visgraat.svg", "label": "t:options.floor_visual.herringbone" }, { "value": "m2-floor-hongaarse-punt.svg", "label": "t:options.floor_visual.chevron" }, { "value": "m2-floor-rechte-plank.svg", "label": "t:options.floor_visual.straight_plank" }], "default": "m2-floor-pvc.svg" }, { "type": "text", "id": "placeholder_label", "label": "t:labels.placeholder_alt", "default": "Illustratie van een PVC-vloer" }, { "type": "text", "id": "button_label", "label": "t:labels.button_label", "default": "Bekijk de mogelijkheden" }, { "type": "url", "id": "button_link", "label": "t:labels.button_link" }] }],
+  "max_blocks": 4,
+  "presets": [{ "name": "t:general.m2_floor_types", "blocks": [{ "type": "floor", "settings": { "heading": "PVC", "body": "Sterk, stil en makkelijk in onderhoud. Verkrijgbaar in veel kleuren en patronen.", "prototype_visual": "m2-floor-pvc.svg", "placeholder_label": "Illustratie van warme PVC-planken", "button_label": "Bekijk de mogelijkheden" } }, { "type": "floor", "settings": { "heading": "Visgraat", "body": "Een klassiek patroon dat veel sfeer geeft. We leggen het strak en werken het netjes af.", "prototype_visual": "m2-floor-visgraat.svg", "placeholder_label": "Illustratie van een vloer in visgraatpatroon", "button_label": "Bekijk de mogelijkheden" } }, { "type": "floor", "settings": { "heading": "Hongaarse punt", "body": "Net wat rustiger dan visgraat, met een strakke schuine lijn.", "prototype_visual": "m2-floor-hongaarse-punt.svg", "placeholder_label": "Illustratie van een vloer in Hongaarse punt", "button_label": "Bekijk de mogelijkheden" } }, { "type": "floor", "settings": { "heading": "Rechte plank", "body": "Rustig, tijdloos en passend in bijna ieder interieur.", "prototype_visual": "m2-floor-rechte-plank.svg", "placeholder_label": "Illustratie van een vloer met rechte planken", "button_label": "Bekijk de mogelijkheden" } }] }]
+}
+{% endschema %}

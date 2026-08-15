@@ -15,6 +15,17 @@ body {
 
 html:has(dialog[scroll-lock][open], details[scroll-lock][open]) {
   overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body:has(dialog[scroll-lock][open], details[scroll-lock][open]) {
+  overscroll-behavior: none;
+}
+
+html:has(.m2-mobile-menu[open]) .shopify-section-group-header-group {
+  position: fixed;
+  inset: 0 0 auto;
+  width: 100%;
 }
 
 img,
@@ -54,7 +65,7 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 p:empty {
@@ -76,6 +87,253 @@ body {
   font-family: var(--font-primary--family);
   background-color: var(--color-background);
   color: var(--color-foreground);
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  width: 100%;
+  min-width: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+}
+
+body,
+button,
+a,
+input,
+textarea,
+select {
+  font-family: var(--font-primary--family);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+summary {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-foreground);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px var(--color-background);
+}
+
+.m2-skip-link {
+  position: fixed;
+  inset: 0 auto auto 0;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  background: var(--color-foreground);
+  color: var(--color-background);
+  transform: translateY(-120%);
+}
+
+.m2-skip-link:focus {
+  transform: translateY(0);
+}
+
+.m2-button {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 3.2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.82rem 1.55rem;
+  border: 1px solid var(--color-foreground);
+  border-radius: 999px;
+  background: var(--color-foreground);
+  color: var(--color-background);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.105em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+  box-shadow: 0 0.5rem 1.5rem rgb(23 23 19 / 0.08);
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.m2-button:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-foreground);
+  box-shadow: 0 0.8rem 2rem rgb(23 23 19 / 0.14);
+  transform: translateY(-2px);
+}
+
+.m2-button--light {
+  border-color: var(--color-background);
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.m2-button--outline {
+  background: transparent;
+  color: currentcolor;
+  box-shadow: none;
+}
+
+.m2-eyebrow {
+  color: var(--color-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.m2-heading {
+  max-width: 18ch;
+  font-family: var(--font-display--family);
+  font-size: clamp(2.3rem, 6vw, 5.4rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.m2-media,
+.m2-media-placeholder {
+  position: relative;
+  overflow: hidden;
+  min-height: 18rem;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  color: color-mix(in srgb, var(--color-foreground) 65%, transparent);
+  text-align: center;
+  background:
+    linear-gradient(135deg, transparent 48%, color-mix(in srgb, var(--color-accent) 50%, transparent) 49%, transparent 51%),
+    linear-gradient(45deg, var(--color-surface), color-mix(in srgb, var(--color-accent) 35%, var(--color-background)));
+}
+
+.page-width {
+  width: min(calc(100% - (2 * var(--page-margin))), var(--page-width));
+  margin-inline: auto;
+}
+
+.m2-container {
+  width: min(calc(100% - (2 * var(--m2-gutter))), var(--m2-container-width));
+  min-width: 0;
+  margin-inline: auto;
+}
+
+.m2-container > * {
+  min-width: 0;
+}
+
+.m2-section {
+  padding-block: var(--m2-section-space);
+}
+
+.m2-section[id] {
+  scroll-margin-top: 8rem;
+}
+
+.m2-section-heading {
+  margin-bottom: clamp(2.75rem, 5vw, 4.75rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .65fr);
+  align-items: end;
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+.m2-section-heading > * {
+  min-width: 0;
+}
+
+.m2-section-heading h2 {
+  max-width: 12ch;
+  margin: 1rem 0 0;
+  font-family: var(--font-display--family);
+  font-size: clamp(2.75rem, 5.6vw, 5.8rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: .95;
+}
+
+.m2-section-heading__body {
+  max-width: 31rem;
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.m2-section-heading__body p {
+  margin: 0;
+}
+
+.m2-rte {
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
+}
+
+.m2-rte p + p {
+  margin-top: 1rem;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.m2-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.m2-section-shell {
+  width: 100%;
+  padding-block: var(--m2-section-space);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  :root {
+    --m2-section-space: clamp(3.5rem, 13vw, 4.5rem);
+  }
+
+  .m2-section {
+    padding-block: var(--m2-section-space);
+  }
+
+  .m2-button {
+    min-height: 3rem;
+  }
+
+  .m2-section-heading {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
 }
 
 /** Section layout utilities */
@@ -104,11 +362,15 @@ body {
   grid-template-columns: var(--content-grid);
   display: grid;
   width: 100%;
+  min-width: 0;
 }
 
 /* Child elements, by default, are constrained to the central column of the grid. */
 .shopify-section > * {
   grid-column: 2;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 /* Child elements that use the full-width utility class span the entire viewport. */

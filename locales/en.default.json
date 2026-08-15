@@ -1,4 +1,25 @@
 {
+  "accessibility": {
+    "close_menu": "Close menu",
+    "open_menu": "Open menu",
+    "skip_to_content": "Skip to content"
+  },
+  "m2": {
+    "contact": {
+      "whatsapp": "WhatsApp"
+    },
+    "navigation": {
+      "floors": "Floors",
+      "showroom": "Mobile showroom",
+      "projects": "Projects",
+      "process": "Process",
+      "about": "About"
+    },
+    "social": {
+      "instagram": "Instagram",
+      "tiktok": "TikTok"
+    }
+  },
   "404": {
     "title": "404",
     "not_found": "Page not found.",

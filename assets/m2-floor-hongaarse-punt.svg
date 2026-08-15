@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Hongaarse punt vloer</title><desc id="desc">Grafische vloerillustratie met lange planken die samen een verfijnd chevronpatroon vormen.</desc>
+  <rect width="800" height="650" fill="#EAE1D5"/>
+  <g stroke="#796049" stroke-width="3">
+    <path d="M-80 0 80 145 240 0h113L80 247-193 0H-80Zm320 0 160 145L560 0h113L400 247 127 0h113Zm320 0 160 145L880 0h113L720 247 447 0h113Z" fill="#B99A73"/>
+    <path d="M-80 205 80 350l160-145h113L80 452l-273-247H-80Zm320 0 160 145 160-145h113L400 452 127 205h113Zm320 0 160 145 160-145h113L720 452 447 205h113Z" fill="#CCB28B"/>
+    <path d="M-80 410 80 555l160-145h113L80 657-193 410H-80Zm320 0 160 145 160-145h113L400 657 127 410h113Zm320 0 160 145 160-145h113L720 657 447 410h113Z" fill="#A98966"/>
+    <path d="M240 0 80 145M560 0 400 145M880 0 720 145M240 205 80 350M560 205 400 350M880 205 720 350M240 410 80 555M560 410 400 555M880 410 720 555" opacity=".35"/>
+  </g>
+  <rect x="12" y="12" width="776" height="626" stroke="#F8F5EF" stroke-width="24"/>
+</svg>

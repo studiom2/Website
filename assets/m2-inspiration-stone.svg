@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Modern steenlook interieur als vloerinspiratie</title><desc id="desc">Abstracte rustige keuken met een verfijnde, lichtgrijze steenlook vloer.</desc>
+  <defs><linearGradient id="wall" x1="500" y1="0" x2="500" y2="800" gradientUnits="userSpaceOnUse"><stop stop-color="#F4F1EB"/><stop offset="1" stop-color="#D4D1CA"/></linearGradient></defs>
+  <rect width="1000" height="800" fill="url(#wall)"/>
+  <path d="M0 532h1000v268H0z" fill="#B8B4AC"/>
+  <g stroke="#858078" stroke-opacity=".45" stroke-width="3"><path d="M0 620h1000M0 710h1000M205 532 97 800M500 532v268M795 532l108 268"/></g>
+  <rect x="90" y="126" width="384" height="338" fill="#ECE7DE"/>
+  <path d="M90 245h384M90 355h384M219 126v338M348 126v338" stroke="#CEC5B8" stroke-width="5"/>
+  <rect x="580" y="101" width="326" height="363" fill="#8B8A83"/>
+  <rect x="608" y="128" width="270" height="220" fill="#DAD6CD"/>
+  <circle cx="742" cy="241" r="52" fill="#C7B18E" opacity=".75"/>
+  <rect x="609" y="370" width="126" height="66" fill="#6E6D67"/><rect x="752" y="370" width="126" height="66" fill="#6E6D67"/>
+  <path d="M182 492h644l72 128H111l71-128Z" fill="#F2EEE7" stroke="#2C2A25" stroke-width="9"/>
+  <path d="M200 620v112M811 620v112" stroke="#2C2A25" stroke-width="14"/>
+  <path d="M487 410v74M443 410h88l-18 52h-52l-18-52Z" fill="#2C2A25"/>
+</svg>

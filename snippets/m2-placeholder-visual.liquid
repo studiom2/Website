@@ -1,0 +1,23 @@
+{% doc %}
+  Renders an original local Studio m2 prototype visual as an image fallback.
+
+  @param {string} asset_name - The SVG filename in the theme assets directory.
+  @param {string} alt - Accessible alternative text for the visual.
+  @param {string} [css_class] - Optional CSS class for the image.
+  @param {string} [loading] - Optional loading behavior.
+  @param {number} [width] - Intrinsic image width.
+  @param {number} [height] - Intrinsic image height.
+
+  @example
+  {% render 'm2-placeholder-visual', asset_name: 'm2-hero-interior.svg', alt: 'Temporary interior visual', width: 1600, height: 1100 %}
+{% enddoc %}
+
+<img
+  src="{{ asset_name | asset_url }}"
+  alt="{{ alt | escape }}"
+  class="{{ css_class | escape }}"
+  loading="{{ loading | default: 'lazy' }}"
+  decoding="async"
+  width="{{ width | default: 1000 }}"
+  height="{{ height | default: 800 }}"
+>

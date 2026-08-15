@@ -1,0 +1,62 @@
+{% if section.settings.show_section %}
+  <section class="m2-section m2-faq full-width">
+    <div class="m2-container m2-faq__grid">
+      <div class="m2-faq__intro">
+        <h2>{{ section.settings.heading | escape }}</h2>
+      </div>
+      <div class="m2-faq__items">
+        {% for block in section.blocks %}
+          <details {{ block.shopify_attributes }}>
+            <summary aria-expanded="false"><span class="m2-faq__number">0{{ forloop.index }}</span><span class="m2-faq__question">{{ block.settings.question | escape }}</span><span class="m2-faq__toggle" aria-hidden="true">+</span></summary>
+            <div>{{ block.settings.answer }}</div>
+          </details>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% stylesheet %}
+  .m2-faq { background: var(--color-surface); }
+  .m2-faq__grid { display: grid; grid-template-columns: minmax(0, .58fr) minmax(0, 1.42fr); gap: clamp(2.75rem, 8vw, 8rem); }
+  .m2-faq__intro { position: sticky; top: 8rem; align-self: start; }
+  .m2-faq h2 { max-width: 11ch; margin: 0; font-size: clamp(2.8rem, 5vw, 5.4rem); line-height: .96; }
+  .m2-faq__items details { border-top: 1px solid var(--color-border); }
+  .m2-faq__items details:last-child { border-bottom: 1px solid var(--color-border); }
+  .m2-faq__items summary { min-height: 4.75rem; padding: 1rem 0; display: grid; grid-template-columns: 2rem minmax(0, 1fr) auto; align-items: center; gap: 1rem; cursor: pointer; list-style: none; }
+  .m2-faq__items summary::-webkit-details-marker { display: none; }
+  .m2-faq__number { color: var(--color-accent-strong); font-family: var(--font-display-family); font-size: .75rem; font-style: italic; }
+  .m2-faq__question { font-family: var(--font-display-family); font-size: clamp(1.4rem, 2.4vw, 2.1rem); line-height: 1.2; }
+  .m2-faq__toggle { width: 2.75rem; height: 2.75rem; display: grid; place-items: center; border: 1px solid var(--color-border); border-radius: 50%; color: var(--color-accent-strong); font-size: 1.2rem; transition: background-color 180ms ease, color 180ms ease, transform 180ms ease; }
+  .m2-faq__items details[open] .m2-faq__toggle { color: var(--color-background); background: var(--color-foreground); transform: rotate(45deg); }
+  .m2-faq__items details > div { max-width: 42rem; padding: 0 3.5rem 1.75rem 3rem; color: var(--color-muted); line-height: 1.75; }
+  .m2-faq__items details > div p { margin: 0; }
+  @media screen and (max-width: 780px) { .m2-faq__grid { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; } .m2-faq__intro { position: static; } }
+  @media screen and (max-width: 520px) { .m2-faq__items summary { grid-template-columns: 1.3rem minmax(0, 1fr) auto; gap: .65rem; } .m2-faq__question { font-size: 1.3rem; } .m2-faq__items details > div { padding-left: 1.95rem; padding-right: 0; } }
+{% endstylesheet %}
+
+{% javascript %}
+  document.addEventListener('click', (event) => {
+    const summary = event.target.closest('.m2-faq__items summary');
+    if (!summary) return;
+    const details = summary.closest('details');
+    summary.setAttribute('aria-expanded', details.open ? 'false' : 'true');
+  });
+  document.addEventListener('toggle', (event) => {
+    if (!event.target.matches('.m2-faq__items details')) return;
+    const summary = event.target.querySelector('summary');
+    if (summary) summary.setAttribute('aria-expanded', event.target.open ? 'true' : 'false');
+  }, true);
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "t:general.m2_faq",
+  "settings": [
+    { "type": "checkbox", "id": "show_section", "label": "t:labels.show_section", "default": true },
+    { "type": "text", "id": "heading", "label": "t:labels.heading", "default": "Veelgestelde vragen" }
+  ],
+  "blocks": [{ "type": "question", "name": "t:general.faq_question", "settings": [{ "type": "text", "id": "question", "label": "t:labels.question", "default": "Leggen jullie ook een vloer die ik zelf heb gekocht?" }, { "type": "richtext", "id": "answer", "label": "t:labels.answer", "default": "<p>Ja. We kunnen alleen het legwerk doen, maar ook de complete klus verzorgen.</p>" }] }],
+  "presets": [{ "name": "t:general.m2_faq", "blocks": [{ "type": "question", "settings": { "question": "Leggen jullie ook een vloer die ik zelf heb gekocht?", "answer": "<p>Ja. We kunnen alleen het legwerk doen, maar ook de complete klus verzorgen.</p>" } }, { "type": "question", "settings": { "question": "Kunnen jullie ook egaliseren?", "answer": "<p>Ja. Als de ondervloer dat nodig heeft, kunnen we hem egaliseren voordat we gaan leggen.</p>" } }, { "type": "question", "settings": { "question": "Komen jullie met stalen aan huis?", "answer": "<p>Ja. Bij serieuze interesse kunnen we met stalen langskomen, zodat je de kleuren en structuren thuis kunt bekijken.</p>" } }] }]
+}
+{% endschema %}

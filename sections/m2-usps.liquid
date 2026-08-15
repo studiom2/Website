@@ -1,0 +1,58 @@
+{% if section.settings.show_section %}
+  <section class="m2-usps full-width" aria-labelledby="UspsHeading-{{ section.id }}">
+    <div class="m2-container">
+      <h2 class="visually-hidden" id="UspsHeading-{{ section.id }}">{{ section.settings.heading | escape }}</h2>
+      <div class="m2-usps__grid">
+        {% for block in section.blocks %}
+          <article class="m2-usp" {{ block.shopify_attributes }}>
+            <div class="m2-usp__icon" aria-hidden="true">
+              {% case forloop.index %}
+                {% when 1 %}<svg viewBox="0 0 32 32"><path d="M5 23.5V12l11-7 11 7v11.5M10 26V15h12v11M13 21h6"/></svg>
+                {% when 2 %}<svg viewBox="0 0 32 32"><path d="m7 21 8-8 4 4 7-7M7 26h19M8 8l3 3"/></svg>
+                {% when 3 %}<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><path d="m11 16 3.5 3.5L22 12"/></svg>
+                {% else %}<svg viewBox="0 0 32 32"><path d="M5 9h22M5 16h22M5 23h22M10 6v6M22 13v6M14 20v6"/></svg>
+              {% endcase %}
+            </div>
+            <div><span>0{{ forloop.index }}</span><h3>{{ block.settings.heading | escape }}</h3><p>{{ block.settings.body | escape }}</p></div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% stylesheet %}
+  .m2-usps { padding-block: 1.25rem; background: var(--color-foreground); color: var(--color-background); }
+  .m2-usps__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .m2-usp { min-height: 8.5rem; padding: 1.4rem clamp(1rem, 2.2vw, 2rem); display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 1rem; border-left: 1px solid color-mix(in srgb, var(--color-background) 14%, transparent); }
+  .m2-usp:first-child { padding-left: 0; border-left: 0; }
+  .m2-usp__icon { width: 2.55rem; height: 2.55rem; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--color-background) 20%, transparent); border-radius: 50%; color: var(--color-accent); }
+  .m2-usp__icon svg { width: 1.2rem; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+  .m2-usp > div:last-child > span { color: var(--color-accent); font-family: var(--font-display-family); font-size: .72rem; font-style: italic; }
+  .m2-usp h3 { margin: .22rem 0 .5rem; color: inherit; font: 700 .82rem/1.25 var(--font-body-family); }
+  .m2-usp p { max-width: 14rem; margin: 0; color: color-mix(in srgb, var(--color-background) 68%, transparent); font-size: .7rem; line-height: 1.55; }
+  @media screen and (max-width: 900px) {
+    .m2-usps__grid { grid-template-columns: 1fr 1fr; }
+    .m2-usp:nth-child(3) { border-left: 0; }
+    .m2-usp:nth-child(n+3) { border-top: 1px solid color-mix(in srgb, var(--color-background) 14%, transparent); }
+  }
+  @media screen and (max-width: 520px) {
+    .m2-usps { padding-block: .5rem; }
+    .m2-usps__grid { grid-template-columns: 1fr; }
+    .m2-usp { min-height: 0; padding: 1.25rem 0; border-top: 1px solid color-mix(in srgb, var(--color-background) 14%, transparent); border-left: 0; }
+    .m2-usp:first-child { border-top: 0; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:general.m2_usps",
+  "settings": [
+    { "type": "checkbox", "id": "show_section", "label": "t:labels.show_section", "default": true },
+    { "type": "text", "id": "heading", "label": "t:labels.heading", "default": "Waarom Studio m2" }
+  ],
+  "blocks": [{ "type": "usp", "name": "t:general.usp", "settings": [{ "type": "text", "id": "heading", "label": "t:labels.heading", "default": "Vloer leveren én leggen" }, { "type": "text", "id": "body", "label": "t:labels.body", "default": "We kunnen de complete klus voor je regelen." }] }],
+  "max_blocks": 4,
+  "presets": [{ "name": "t:general.m2_usps", "blocks": [{ "type": "usp", "settings": { "heading": "Vloer leveren én leggen", "body": "We kunnen de complete klus voor je regelen." } }, { "type": "usp", "settings": { "heading": "Egaliseren en plinten", "body": "Ook de voorbereiding en afwerking kunnen we doen." } }, { "type": "usp", "settings": { "heading": "Zelf een vloer gekocht?", "body": "Dan verzorgen we gewoon alleen het legwerk." } }, { "type": "usp", "settings": { "heading": "Afspraak is afspraak", "body": "We zeggen wat we doen en doen wat we zeggen." } }] }]
+}
+{% endschema %}

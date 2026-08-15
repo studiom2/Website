@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Rijdende showroom met vloerstalen</title>
+  <desc id="desc">Gestileerde bestelbus met open laadruimte waarin verschillende vloerstalen staan.</desc>
+  <defs><linearGradient id="bg" x1="128" y1="48" x2="1082" y2="852" gradientUnits="userSpaceOnUse"><stop stop-color="#F7F3EC"/><stop offset="1" stop-color="#DED3C4"/></linearGradient><linearGradient id="van" x1="212" y1="292" x2="984" y2="663" gradientUnits="userSpaceOnUse"><stop stop-color="#FAF8F3"/><stop offset="1" stop-color="#D8D0C5"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <circle cx="985" cy="172" r="92" fill="#D6C3A5" opacity=".55"/>
+  <path d="M95 690c208-73 821-73 1010 0v76H95v-76Z" fill="#C5B295" opacity=".42"/>
+  <path d="M238 286h526c51 0 95 31 114 78l72 170h68c33 0 60 27 60 60v88H179V376c0-50 10-90 59-90Z" fill="url(#van)" stroke="#2C2A25" stroke-width="12"/>
+  <path d="M765 303v231h176l-68-162c-17-41-58-69-108-69Z" fill="#B8C6C0"/>
+  <path d="M786 327v177h111l-52-126c-12-29-32-47-59-51Z" fill="#E8EFEC"/>
+  <path d="M231 329h492v257H231z" fill="#E8E1D6" stroke="#2C2A25" stroke-width="8"/>
+  <path d="M254 350h446v214H254z" fill="#D8CCBA"/>
+  <g stroke="#6F5944" stroke-width="8">
+    <path d="M280 526V383h66v143M375 526V371h71v155M476 526V397h67v129M573 526V363h78v163"/>
+  </g>
+  <g fill="#B59875"><path d="M280 383h66v143h-66z" opacity=".8"/><path d="M375 371h71v155h-71z" opacity=".62"/><path d="M476 397h67v129h-67z" opacity=".94"/><path d="M573 363h78v163h-78z" opacity=".72"/></g>
+  <path d="M199 586h849" stroke="#2C2A25" stroke-width="10"/>
+  <circle cx="351" cy="682" r="82" fill="#2C2A25"/><circle cx="351" cy="682" r="38" fill="#B9AA94"/>
+  <circle cx="899" cy="682" r="82" fill="#2C2A25"/><circle cx="899" cy="682" r="38" fill="#B9AA94"/>
+  <path d="M804 604h207M214 604h65" stroke="#B49773" stroke-width="16" stroke-linecap="round"/>
+  <g transform="translate(760 708)">
+    <path d="M0 0h212l69 99H67L0 0Z" fill="#A88865"/>
+    <path d="M51 0l69 99M105 0l68 99M159 0l69 99" stroke="#6E5843" stroke-width="4"/>
+    <path d="M24 34h212M48 67h211" stroke="#6E5843" stroke-width="4"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">PVC vloer in brede planken</title><desc id="desc">Detailillustratie van rustige, naturel gekleurde PVC planken.</desc>
+  <defs><linearGradient id="base" x1="0" y1="0" x2="800" y2="650" gradientUnits="userSpaceOnUse"><stop stop-color="#D9C6A8"/><stop offset="1" stop-color="#A98B69"/></linearGradient></defs>
+  <rect width="800" height="650" fill="#F1EAE0"/>
+  <g transform="skewY(-8) translate(0 64)">
+    <rect width="800" height="550" fill="url(#base)"/>
+    <g stroke="#755E49" stroke-opacity=".5" stroke-width="4"><path d="M0 110h800M0 220h800M0 330h800M0 440h800"/><path d="M178 0v110M566 0v110M84 110v110M460 110v110M265 220v110M651 220v110M131 330v110M515 330v110M338 440v110M719 440v110"/></g>
+    <g stroke="#7B634C" stroke-opacity=".22" stroke-width="3" stroke-linecap="round"><path d="M21 42c98-35 174 35 280-4s190 22 303-3 143 0 175 12"/><path d="M28 164c86-41 173 19 257-15s167 28 273-6 164 7 219 22"/><path d="M18 277c121-29 197 16 291-12s175 27 272-8 156 0 200 8"/><path d="M23 389c88-31 177 16 270-13s181 29 287-5 150 4 198 13"/><path d="M25 497c91-23 157 18 262-8s177 16 284-10 154 2 204 12"/></g>
+  </g>
+  <path d="M0 0h800v650H0z" stroke="#F8F5EF" stroke-width="24"/>
+</svg>

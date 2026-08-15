@@ -8,5 +8,12 @@
  * ------------------------------------------------------------
  */
 {
-  "current": {}
+  "current": {
+    "business_name": "Studio m2 vloeren",
+    "contact_phone": "06-85887536",
+    "contact_phone_url": "tel:+31685887536",
+    "whatsapp_url": "https://wa.me/31685887536",
+    "contact_email": "studiom2vloeren@proton.me",
+    "instagram_url": "https://www.instagram.com/studiom2vloeren/"
+  }
 }

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Conceptbeeld van een minimalistische keuken</title><desc id="desc">Niet-projectgebonden interieurimpressie met rustige kasten en een lange plankenvloer.</desc>
+  <rect width="1000" height="800" fill="#E5E0D7"/>
+  <path d="M0 529h1000v271H0z" fill="#BCA482"/>
+  <g stroke="#735C46" stroke-opacity=".38" stroke-width="3"><path d="M0 596h1000M0 665h1000M0 736h1000M188 529 93 800M474 529l-15 271M761 529l63 271"/></g>
+  <rect x="74" y="111" width="399" height="382" fill="#7B7A73"/>
+  <rect x="103" y="141" width="151" height="163" fill="#D6D0C6"/><rect x="273" y="141" width="171" height="163" fill="#D6D0C6"/>
+  <rect x="103" y="326" width="151" height="138" fill="#696962"/><rect x="273" y="326" width="171" height="138" fill="#696962"/>
+  <path d="M553 354h344l50 178H503l50-178Z" fill="#F5F1E9" stroke="#2C2A25" stroke-width="9"/>
+  <path d="M537 530v155M913 530v155" stroke="#2C2A25" stroke-width="14"/>
+  <path d="M687 181v155M632 181h110l-23 73h-64l-23-73Z" fill="#2C2A25"/>
+  <g stroke="#2C2A25" stroke-width="10"><path d="M584 590v133M849 590v133"/></g>
+  <g fill="#8D7458"><path d="M544 566h82v51h-82zM809 566h82v51h-82z"/></g>
+  <path d="M210 72v30M361 72v30" stroke="#B49773" stroke-width="8" stroke-linecap="round"/>
+</svg>

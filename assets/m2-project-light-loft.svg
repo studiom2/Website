@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Conceptbeeld van een lichte woonruimte</title><desc id="desc">Niet-projectgebonden impressie van een loft met een rustige plankenvloer.</desc>
+  <rect width="1000" height="800" fill="#EEE9E0"/>
+  <path d="M0 521h1000v279H0z" fill="#C5AF8D"/>
+  <g stroke="#7A624A" stroke-opacity=".38" stroke-width="3"><path d="M0 592h1000M0 667h1000M0 744h1000M139 521 43 800M381 521l-31 279M623 521l31 279M865 521l96 279"/></g>
+  <rect x="69" y="74" width="385" height="384" fill="#C7D1CD" stroke="#2C2A25" stroke-width="12"/>
+  <path d="M261 80v372M75 266h373" stroke="#F3F0E9" stroke-width="10"/>
+  <path d="M85 382c74-64 134-86 176-91 74 13 123 45 181 104v57H85v-70Z" fill="#9EADA5" opacity=".55"/>
+  <rect x="531" y="274" width="398" height="243" rx="9" fill="#E0D4C4"/>
+  <rect x="559" y="313" width="161" height="180" rx="36" fill="#FBF8F2"/><rect x="735" y="313" width="166" height="180" rx="36" fill="#F4EFE7"/>
+  <path d="M551 507v101M909 507v101" stroke="#2C2A25" stroke-width="12"/>
+  <ellipse cx="657" cy="660" rx="178" ry="41" fill="#8B7155" opacity=".36"/>
+  <path d="M594 610h205l-29 48H623l-29-48Z" fill="#6D5843"/><path d="m628 650-21 78M766 650l20 78" stroke="#2C2A25" stroke-width="9"/>
+</svg>

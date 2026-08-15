@@ -1,3 +1,7 @@
+{% doc %}
+  Renders global font, layout, color, radius, and shadow design tokens.
+{% enddoc %}
+
 {% style %}
   {% # Loads all font variantions with display: swap %}
   {{ settings.type_primary_font | font_face: font_display: 'swap' }}
@@ -9,10 +13,27 @@
     --font-primary--family: {{ settings.type_primary_font.family }}, {{ settings.type_primary_font.fallback_families }};
     --font-primary--style: {{ settings.type_primary_font.style }};
     --font-primary--weight: {{ settings.type_primary_font.weight }};
+    --font-display--family: Georgia, 'Times New Roman', serif;
+    --font-body-family: var(--font-primary--family);
+    --font-display-family: var(--font-display--family);
     --page-width: {{ settings.max_page_width }};
     --page-margin: {{ settings.min_page_margin }}px;
+    --m2-container-width: var(--page-width);
+    --m2-gutter: clamp(1rem, 3vw, var(--page-margin));
+    --m2-section-space: clamp(4rem, 8vw, 7.5rem);
     --color-background: {{ settings.background_color }};
     --color-foreground: {{ settings.foreground_color }};
+    --color-surface: {{ settings.surface_color }};
+    --color-accent: {{ settings.accent_color }};
+    --color-accent-strong: color-mix(in srgb, var(--color-accent) 48%, var(--color-foreground));
+    --color-muted: {{ settings.muted_color }};
+    --color-border: color-mix(in srgb, var(--color-foreground) 16%, transparent);
+    --color-border-light: color-mix(in srgb, var(--color-foreground) 9%, transparent);
+    --radius-small: 0.75rem;
+    --radius-medium: 1.25rem;
+    --radius-large: 2rem;
+    --shadow-soft: 0 1.5rem 4rem rgb(23 23 19 / 0.09);
+    --shadow-card: 0 0.75rem 2rem rgb(23 23 19 / 0.07);
     --style-border-radius-inputs: {{ settings.input_corner_radius }}px;
   }
 {% endstyle %}

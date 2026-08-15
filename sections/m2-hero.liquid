@@ -1,0 +1,111 @@
+{% liquid
+  assign primary_link = section.settings.primary_link
+  if primary_link == blank
+    assign primary_link = settings.whatsapp_url
+  endif
+  assign secondary_link = section.settings.secondary_link
+  if secondary_link == blank
+    assign secondary_link = settings.contact_phone_url
+  endif
+  assign tertiary_link = section.settings.tertiary_link
+  if tertiary_link == blank
+    assign tertiary_link = routes.root_url | append: '#vloeren'
+  endif
+%}
+
+<section class="m2-hero full-width" aria-labelledby="HeroHeading-{{ section.id }}">
+  <div class="m2-hero__inner m2-container">
+    <div class="m2-hero__copy">
+      {% if section.settings.eyebrow != blank %}<p class="m2-eyebrow">{{ section.settings.eyebrow | escape }}</p>{% endif %}
+      <h1 id="HeroHeading-{{ section.id }}">{{ section.settings.heading | escape }}</h1>
+      <div class="m2-hero__body">{{ section.settings.body }}</div>
+      <div class="m2-hero__actions">
+        {% if section.settings.primary_label != blank and primary_link != blank %}
+          <a class="m2-button" href="{{ primary_link | escape }}">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.4-4.3A8.5 8.5 0 1 1 20.5 11.7Zm-4.7 2.1c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.8 6.8 0 0 1-2-1.2 7.6 7.6 0 0 1-1.4-1.8c-.1-.2 0-.4.1-.5l.4-.5.2-.4c.1-.1 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2 0 1.2.9 2.4 1 2.5.1.2 1.7 2.7 4.2 3.7.6.3 1 .4 1.4.5.6.2 1.1.2 1.5.1.5-.1 1.3-.5 1.5-1.1.2-.5.2-1 .1-1.1-.1-.2-.3-.3-.6-.4Z" fill="currentColor"/></svg>
+            {{ section.settings.primary_label | escape }}
+          </a>
+        {% endif %}
+        {% if section.settings.secondary_label != blank and secondary_link != blank %}
+          <a class="m2-button m2-button--outline" href="{{ secondary_link | escape }}">{{ section.settings.secondary_label | escape }}</a>
+        {% endif %}
+      </div>
+      {% if section.settings.tertiary_label != blank %}<a class="m2-hero__text-link" href="{{ tertiary_link | escape }}">{{ section.settings.tertiary_label | escape }} <span aria-hidden="true">↘</span></a>{% endif %}
+    </div>
+
+    <div class="m2-hero__visual">
+      <div class="m2-hero__image-wrap">
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 1800 | image_tag: loading: 'eager', widths: '480, 720, 960, 1200, 1600, 1800', sizes: '(min-width: 900px) 54vw, 100vw', alt: section.settings.image.alt }}
+        {% else %}
+          {% render 'm2-placeholder-visual', asset_name: 'm2-hero-interior.svg', alt: section.settings.placeholder_label, css_class: 'm2-hero__fallback', loading: 'eager', width: 1600, height: 1100 %}
+        {% endif %}
+      </div>
+      <div class="m2-hero__seal" aria-hidden="true">m²</div>
+      <div class="m2-hero__swatches" aria-hidden="true"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .m2-hero { background: linear-gradient(115deg, var(--color-background) 0 47%, color-mix(in srgb, var(--color-accent) 16%, var(--color-surface)) 47% 100%); }
+  .m2-hero__inner { min-height: min(44rem, calc(100svh - 5rem)); display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: stretch; gap: clamp(2rem, 5vw, 5rem); }
+  .m2-hero__copy { max-width: 37rem; padding-block: clamp(4.5rem, 8vw, 7rem); align-self: center; }
+  .m2-hero h1 { max-width: 9ch; margin: 1.15rem 0 1.6rem; font-size: clamp(3.7rem, 6.5vw, 6.8rem); letter-spacing: -.055em; line-height: .92; }
+  .m2-hero__body { max-width: 32rem; color: var(--color-muted); font-size: clamp(1.05rem, 1.55vw, 1.25rem); line-height: 1.68; }
+  .m2-hero__body p { margin: 0; }
+  .m2-hero__actions { margin-top: 2.25rem; display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+  .m2-hero__actions svg { width: 1rem; height: 1rem; }
+  .m2-hero__text-link { width: fit-content; min-height: 2.75rem; margin-top: 1rem; display: flex; align-items: center; gap: .7rem; color: inherit; font-size: .76rem; font-weight: 700; letter-spacing: .04em; text-decoration: none; }
+  .m2-hero__text-link span { width: 1.8rem; height: 1.8rem; display: grid; place-items: center; border: 1px solid var(--color-border); border-radius: 50%; transition: background-color 180ms ease, transform 180ms ease; }
+  .m2-hero__text-link:hover span { background: var(--color-accent); transform: rotate(-45deg); }
+  .m2-hero__visual { position: relative; min-width: 0; padding-block: clamp(2rem, 4vw, 3.5rem); }
+  .m2-hero__image-wrap { height: 100%; min-height: 34rem; overflow: hidden; border-radius: var(--radius-large); box-shadow: var(--shadow-soft); }
+  .m2-hero__image-wrap > img { width: 100%; max-width: 100%; height: 100%; object-fit: cover; }
+  .m2-hero__seal { position: absolute; right: 1.25rem; bottom: 1.25rem; width: 4.75rem; height: 4.75rem; display: grid; place-content: center; border-radius: 50%; color: var(--color-background); background: var(--color-foreground); font-family: var(--font-display-family); font-size: 1.45rem; font-style: italic; line-height: 1; transform: rotate(-8deg); box-shadow: 0 1rem 2rem rgb(23 23 19 / .22); }
+  .m2-hero__swatches { position: absolute; right: 1.5rem; bottom: 1.1rem; display: flex; }
+  .m2-hero__swatches span { width: 2.4rem; height: .35rem; }
+  .m2-hero__swatches span:first-child { background: #d8c4a6; }
+  .m2-hero__swatches span:nth-child(2) { background: #9b7d5c; }
+  .m2-hero__swatches span:last-child { background: #453b32; }
+  @media screen and (max-width: 899px) {
+    .m2-hero { background: var(--color-background); }
+    .m2-hero__inner { min-height: 0; grid-template-columns: minmax(0, 1fr); }
+    .m2-hero__copy { width: 100%; max-width: 43rem; padding: 4rem 0 2.75rem; }
+    .m2-hero h1 { max-width: 9ch; }
+    .m2-hero__visual { padding: 0 0 1.25rem; }
+    .m2-hero__image-wrap { min-height: 0; aspect-ratio: 4 / 3; border-radius: var(--radius-large); }
+    .m2-hero__image-wrap > img { width: 100%; }
+    .m2-hero__seal { right: 1rem; bottom: .25rem; }
+  }
+  @media screen and (max-width: 540px) {
+    .m2-hero__copy { padding-block: 3.25rem 2.5rem; }
+    .m2-hero h1 { font-size: clamp(3rem, 14vw, 4.5rem); }
+    .m2-hero__actions { width: 100%; }
+    .m2-hero__image-wrap { border-radius: var(--radius-medium); }
+  }
+  @media screen and (max-width: 420px) {
+    .m2-hero__actions { align-items: stretch; flex-direction: column; }
+    .m2-hero__actions .m2-button { width: 100%; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:general.m2_hero",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "t:labels.eyebrow", "default": "Vloeren in Zuid-Holland" },
+    { "type": "text", "id": "heading", "label": "t:labels.heading", "default": "Een strakke vloer, goed gelegd." },
+    { "type": "richtext", "id": "body", "label": "t:labels.body", "default": "<p>Van oude vloer eruit tot egaliseren, leggen en plinten. We leveren de vloer, maar leggen ook materiaal dat je zelf al hebt.</p>" },
+    { "type": "text", "id": "primary_label", "label": "t:labels.primary_button", "default": "WhatsApp ons" },
+    { "type": "url", "id": "primary_link", "label": "t:labels.primary_link" },
+    { "type": "text", "id": "secondary_label", "label": "t:labels.secondary_button", "default": "Bel ons" },
+    { "type": "url", "id": "secondary_link", "label": "t:labels.secondary_link" },
+    { "type": "text", "id": "tertiary_label", "label": "t:labels.text_link", "default": "Bekijk de vloeren" },
+    { "type": "url", "id": "tertiary_link", "label": "t:labels.text_link_url" },
+    { "type": "image_picker", "id": "image", "label": "t:labels.image" },
+    { "type": "text", "id": "placeholder_label", "label": "t:labels.placeholder_alt", "default": "Illustratie van een licht interieur met een warme vloer" }
+  ],
+  "presets": [{ "name": "t:general.m2_hero" }]
+}
+{% endschema %}

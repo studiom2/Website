@@ -1,77 +1,239 @@
-<header>
-  <h2 class="header__title">
-    {{ shop.name | link_to: routes.root_url }}
-  </h2>
+{% liquid
+  assign home_url = routes.root_url
+  assign floors_url = routes.root_url | append: '#vloeren'
+  assign showroom_url = routes.root_url | append: '#showroom'
+  assign projects_url = routes.root_url | append: '#projecten'
+  assign process_url = routes.root_url | append: '#werkwijze'
+  assign about_url = routes.root_url | append: '#over-ons'
+  assign contact_url = routes.root_url | append: '#contact'
+%}
 
-  <div class="header__menu">
-    {% for link in section.settings.menu.links %}
-      {{ link.title | link_to: link.url }}
-    {% endfor %}
-  </div>
+<header class="m2-header full-width" data-section-id="{{ section.id }}">
+  {% if section.settings.show_topbar %}
+    <div class="m2-topbar">
+      <div class="m2-topbar__inner m2-container">
+        <p class="m2-topbar__promise"><span aria-hidden="true"></span>{{ section.settings.topbar_text | escape }}</p>
+        <div class="m2-topbar__contact">
+          {% if settings.contact_email != blank %}<a href="mailto:{{ settings.contact_email | escape }}">{{ settings.contact_email | escape }}</a>{% endif %}
+          {% if settings.contact_phone != blank and settings.contact_phone_url != blank %}
+            {% if settings.contact_email != blank %}<span aria-hidden="true"></span>{% endif %}
+            <a href="{{ settings.contact_phone_url | escape }}">{{ settings.contact_phone | escape }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
 
-  <div class="header__icons">
-    {% if shop.customer_accounts_enabled %}
-      <shopify-account menu="{{ section.settings.customer_account_menu }}">
-        {{ 'icon-account.svg' | inline_asset_content }}
-      </shopify-account>
-    {% endif %}
-
-    <a href="{{ routes.cart_url }}">
-      {% if cart.item_count > 0 %}
-        <sup>{{ cart.item_count }}</sup>
+  <div class="m2-header__main m2-container">
+    <a class="m2-brand" href="{{ home_url }}" aria-label="{{ settings.business_name | escape }}" style="--logo-width: {{ settings.logo_width }}px">
+      {% if settings.logo != blank %}
+        {{ settings.logo | image_url: width: 420 | image_tag: loading: 'eager', widths: '120, 180, 240, 360, 420', alt: settings.business_name }}
+      {% else %}
+        <span class="m2-brand__mark" aria-hidden="true">m²</span>
+        <span class="m2-brand__copy">
+          <strong>{{ settings.business_name | escape }}</strong>
+          <span>{{ section.settings.brand_tagline | escape }}</span>
+        </span>
       {% endif %}
-
-      {{ 'icon-cart.svg' | inline_asset_content }}
     </a>
+
+    <nav class="m2-nav" aria-label="{{ section.settings.navigation_label | escape }}">
+      {% if section.settings.menu != blank %}
+        {% for link in section.settings.menu.links %}<a href="{{ link.url }}">{{ link.title | escape }}</a>{% endfor %}
+      {% else %}
+        <a href="{{ home_url }}">{{ section.settings.home_label | escape }}</a>
+        <a href="{{ floors_url }}">{{ section.settings.floors_label | escape }}</a>
+        <a href="{{ showroom_url }}">{{ section.settings.showroom_label | escape }}</a>
+        <a href="{{ projects_url }}">{{ section.settings.projects_label | escape }}</a>
+        <a href="{{ process_url }}">{{ section.settings.process_label | escape }}</a>
+        <a href="{{ about_url }}">{{ section.settings.about_label | escape }}</a>
+        <a href="{{ contact_url }}">{{ section.settings.contact_label | escape }}</a>
+      {% endif %}
+    </nav>
+
+    <div class="m2-header__actions">
+      {% if settings.contact_phone != blank and settings.contact_phone_url != blank %}<a class="m2-header__phone" href="{{ settings.contact_phone_url | escape }}">
+        <span>{{ section.settings.phone_label | escape }}</span><strong>{{ settings.contact_phone | escape }}</strong>
+      </a>{% endif %}
+      {% if settings.whatsapp_url != blank and section.settings.whatsapp_label != blank %}<a class="m2-button m2-header__cta" href="{{ settings.whatsapp_url | escape }}">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.4-4.3A8.5 8.5 0 1 1 20.5 11.7Zm-4.7 2.1c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.8 6.8 0 0 1-2-1.2 7.6 7.6 0 0 1-1.4-1.8c-.1-.2 0-.4.1-.5l.4-.5.2-.4c.1-.1 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2 0 1.2.9 2.4 1 2.5.1.2 1.7 2.7 4.2 3.7.6.3 1 .4 1.4.5.6.2 1.1.2 1.5.1.5-.1 1.3-.5 1.5-1.1.2-.5.2-1 .1-1.1-.1-.2-.3-.3-.6-.4Z" fill="currentColor"/></svg>
+        {{ section.settings.whatsapp_label | escape }}
+      </a>{% endif %}
+    </div>
+
+    <div class="m2-header__mobile-actions">
+      {% if settings.whatsapp_url != blank and section.settings.whatsapp_label != blank %}<a class="m2-mobile-contact" href="{{ settings.whatsapp_url | escape }}">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.4-4.3A8.5 8.5 0 1 1 20.5 11.7Zm-4.7 2.1c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.8 6.8 0 0 1-2-1.2 7.6 7.6 0 0 1-1.4-1.8c-.1-.2 0-.4.1-.5l.4-.5.2-.4c.1-.1 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2 0 1.2.9 2.4 1 2.5.1.2 1.7 2.7 4.2 3.7.6.3 1 .4 1.4.5.6.2 1.1.2 1.5.1.5-.1 1.3-.5 1.5-1.1.2-.5.2-1 .1-1.1-.1-.2-.3-.3-.6-.4Z" fill="currentColor"/></svg>
+        <span>{{ section.settings.whatsapp_label | escape }}</span>
+      </a>{% endif %}
+      <details class="m2-mobile-menu" scroll-lock data-open-label="{{ 'accessibility.open_menu' | t | escape }}" data-close-label="{{ 'accessibility.close_menu' | t | escape }}">
+        <summary aria-label="{{ 'accessibility.open_menu' | t }}" aria-expanded="false" aria-controls="MobileMenu-{{ section.id }}"><span></span><span></span><span></span></summary>
+        <div class="m2-mobile-menu__panel" id="MobileMenu-{{ section.id }}">
+          <div class="m2-mobile-menu__heading"><span>{{ section.settings.menu_label | escape }}</span><small>{{ section.settings.brand_tagline | escape }}</small></div>
+          <nav aria-label="{{ section.settings.navigation_label | escape }}">
+            {% if section.settings.menu != blank %}
+              {% for link in section.settings.menu.links %}<a href="{{ link.url }}"><span>0{{ forloop.index }}</span>{{ link.title | escape }}</a>{% endfor %}
+            {% else %}
+              <a href="{{ home_url }}"><span>01</span>{{ section.settings.home_label | escape }}</a>
+              <a href="{{ floors_url }}"><span>02</span>{{ section.settings.floors_label | escape }}</a>
+              <a href="{{ showroom_url }}"><span>03</span>{{ section.settings.showroom_label | escape }}</a>
+              <a href="{{ projects_url }}"><span>04</span>{{ section.settings.projects_label | escape }}</a>
+              <a href="{{ process_url }}"><span>05</span>{{ section.settings.process_label | escape }}</a>
+              <a href="{{ about_url }}"><span>06</span>{{ section.settings.about_label | escape }}</a>
+              <a href="{{ contact_url }}"><span>07</span>{{ section.settings.contact_label | escape }}</a>
+            {% endif %}
+          </nav>
+          <div class="m2-mobile-menu__contact">
+            {% if settings.whatsapp_url != blank and section.settings.whatsapp_label != blank %}<a class="m2-button" href="{{ settings.whatsapp_url | escape }}">{{ section.settings.whatsapp_label | escape }}</a>{% endif %}
+            {% if settings.contact_phone != blank and settings.contact_phone_url != blank %}<a href="{{ settings.contact_phone_url | escape }}">{{ section.settings.phone_label | escape }} {{ settings.contact_phone | escape }}</a>{% endif %}
+          </div>
+        </div>
+      </details>
+    </div>
   </div>
 </header>
 
 {% stylesheet %}
-  header {
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .shopify-section-group-header-group { position: sticky; top: 0; z-index: 50; }
+  .m2-header { position: relative; width: 100%; background: color-mix(in srgb, var(--color-background) 90%, transparent); border-bottom: 1px solid var(--color-border-light); backdrop-filter: blur(18px) saturate(130%); box-shadow: 0 .5rem 2rem rgb(23 23 19 / .035); }
+  .m2-topbar { color: color-mix(in srgb, var(--color-background) 82%, transparent); background: var(--color-foreground); }
+  .m2-topbar__inner { min-height: 2.75rem; display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; font-size: .7rem; letter-spacing: .045em; }
+  .m2-topbar__promise, .m2-topbar__contact { display: flex; align-items: center; gap: .65rem; }
+  .m2-topbar__promise > span { width: .35rem; height: .35rem; border-radius: 50%; background: var(--color-accent); box-shadow: 0 0 0 .22rem rgb(182 154 117 / .18); }
+  .m2-topbar__contact > span { width: 1px; height: .8rem; background: color-mix(in srgb, var(--color-background) 22%, transparent); }
+  .m2-topbar a { min-height: 2.75rem; display: inline-flex; align-items: center; color: inherit; text-decoration: none; }
+  .m2-topbar a:hover { color: var(--color-background); }
+  .m2-header__main { min-height: 5.1rem; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: clamp(1.5rem, 3vw, 3.5rem); }
+  .m2-brand { min-width: 0; min-height: 2.75rem; display: inline-flex; align-items: center; gap: .75rem; color: inherit; text-decoration: none; }
+  .m2-brand > img { width: min(var(--logo-width), 15rem); max-width: min(30vw, 100%); max-height: 3.4rem; object-fit: contain; object-position: left center; }
+  .m2-brand__mark { width: 2.7rem; height: 2.7rem; display: grid; place-items: center; flex: 0 0 auto; border-radius: 50%; color: var(--color-background); background: var(--color-foreground); font-family: var(--font-display-family); font-size: 1.25rem; font-style: italic; line-height: 1; }
+  .m2-brand__copy { display: grid; line-height: 1.05; }
+  .m2-brand__copy strong { font-size: .95rem; letter-spacing: -.025em; }
+  .m2-brand__copy span { margin-top: .28rem; color: var(--color-muted); font-size: .58rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+  .m2-nav { display: flex; align-items: center; justify-content: center; gap: clamp(.8rem, 1.5vw, 1.55rem); }
+  .m2-nav a { position: relative; min-height: 2.75rem; padding-block: .6rem; display: inline-flex; align-items: center; color: inherit; font-size: .75rem; font-weight: 650; text-decoration: none; white-space: nowrap; }
+  .m2-nav a::after { content: ''; position: absolute; right: 0; bottom: .3rem; left: 0; height: 1px; background: var(--color-accent); transform: scaleX(0); transform-origin: right; transition: transform 180ms ease; }
+  .m2-nav a:hover::after, .m2-nav a:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+  .m2-header__actions { display: flex; align-items: center; gap: 1rem; }
+  .m2-header__phone { min-height: 2.75rem; display: grid; align-content: center; color: inherit; line-height: 1.15; text-align: right; text-decoration: none; }
+  .m2-header__phone span { color: var(--color-muted); font-size: .58rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+  .m2-header__phone strong { margin-top: .25rem; font-size: .78rem; }
+  .m2-header__cta { min-height: 2.8rem; padding-inline: 1.2rem; }
+  .m2-header__cta svg { width: 1rem; height: 1rem; }
+  .m2-header__mobile-actions { display: none; }
+  @media screen and (max-width: 1120px) {
+    .m2-header__main { grid-template-columns: auto 1fr; }
+    .m2-nav, .m2-header__actions { display: none; }
+    .m2-header__mobile-actions { display: flex; align-items: center; justify-self: end; gap: .5rem; }
+    .m2-mobile-contact { min-width: 2.75rem; min-height: 2.75rem; padding: .65rem .9rem; display: inline-flex; align-items: center; justify-content: center; gap: .45rem; border: 1px solid var(--color-border); border-radius: 999px; color: var(--color-foreground); background: var(--color-surface); font-size: .68rem; font-weight: 700; line-height: 1; text-decoration: none; white-space: nowrap; }
+    .m2-mobile-contact svg { width: 1.2rem; height: 1.2rem; }
+    .m2-header:has(.m2-mobile-menu[open]) { backdrop-filter: none; }
+    .m2-mobile-menu summary { position: relative; z-index: 2; width: 2.75rem; height: 2.75rem; display: grid; align-content: center; gap: .34rem; padding: .72rem; border-radius: 50%; color: var(--color-background); background: var(--color-foreground); list-style: none; }
+    .m2-mobile-menu summary::-webkit-details-marker { display: none; }
+    .m2-mobile-menu summary span { display: block; width: 100%; height: 1px; background: currentColor; transition: transform 180ms ease, opacity 180ms ease; }
+    .m2-mobile-menu[open] summary span:first-child { transform: translateY(.35rem) rotate(45deg); }
+    .m2-mobile-menu[open] summary span:nth-child(2) { opacity: 0; }
+    .m2-mobile-menu[open] summary span:last-child { transform: translateY(-.35rem) rotate(-45deg); }
+    .m2-mobile-menu__panel { position: fixed; z-index: 1; top: var(--m2-menu-top, 5.1rem); right: 0; left: 0; width: 100%; max-width: 100%; height: calc(100dvh - var(--m2-menu-top, 5.1rem)); max-height: none; overflow-x: hidden; overflow-y: auto; overscroll-behavior-y: contain; -webkit-overflow-scrolling: touch; padding: 2rem max(var(--m2-gutter), env(safe-area-inset-right, 0px)) calc(2.5rem + env(safe-area-inset-bottom, 0px)) max(var(--m2-gutter), env(safe-area-inset-left, 0px)); background: var(--color-surface); border-top: 1px solid var(--color-border-light); box-shadow: var(--shadow-soft); }
+    .m2-mobile-menu__heading { padding-bottom: 1.25rem; display: flex; justify-content: space-between; gap: 1rem; color: var(--color-muted); font-size: .65rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .m2-mobile-menu__heading small { font: inherit; }
+    .m2-mobile-menu__panel nav { display: grid; }
+    .m2-mobile-menu__panel nav a { min-height: 3.25rem; padding: .75rem 0; display: flex; align-items: center; gap: 1rem; color: inherit; border-top: 1px solid var(--color-border-light); font-family: var(--font-display-family); font-size: clamp(1.45rem, 5vw, 2.1rem); text-decoration: none; overflow-wrap: anywhere; }
+    .m2-mobile-menu__panel nav a > span { color: var(--color-accent-strong); font-family: var(--font-body-family); font-size: .58rem; font-weight: 700; letter-spacing: .1em; }
+    .m2-mobile-menu__contact { padding-top: 1.5rem; display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+    .m2-mobile-menu__contact > a:last-child { min-height: 2.75rem; display: inline-flex; align-items: center; font-size: .8rem; font-weight: 700; text-underline-offset: .3rem; }
   }
-  header a {
-    position: relative;
-    text-decoration: none;
-    color: var(--color-foreground);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  @media screen and (max-width: 749px) {
+    .m2-topbar { display: none; }
+    .m2-header__main { min-height: 4.5rem; gap: .6rem; }
+    .m2-brand { min-width: 0; gap: .55rem; }
+    .m2-brand__mark { width: 2.35rem; height: 2.35rem; font-size: 1.05rem; }
+    .m2-brand__copy { min-width: 0; }
+    .m2-brand__copy strong { max-width: 8.5rem; overflow: hidden; font-size: .8rem; text-overflow: ellipsis; white-space: nowrap; }
+    .m2-brand__copy span { font-size: .5rem; }
+    .m2-mobile-menu summary { width: 2.75rem; height: 2.75rem; }
+    .m2-mobile-menu__panel { top: var(--m2-menu-top, 4.5rem); height: calc(100dvh - var(--m2-menu-top, 4.5rem)); }
+    .m2-mobile-menu__heading small { display: none; }
   }
-  header a sup {
-    position: absolute;
-    left: 100%;
-    overflow: hidden;
-    max-width: var(--page-margin);
+  @media screen and (max-width: 420px) {
+    .m2-brand__copy span { display: none; }
+    .m2-brand__copy strong { max-width: 7rem; }
   }
-  header svg {
-    width: 2rem;
-  }
-  header .header__menu,
-  header .header__icons {
-    display: flex;
-    gap: 1rem;
+  @media screen and (max-width: 340px) {
+    .m2-mobile-contact { padding-inline: .7rem; }
+    .m2-mobile-contact svg { display: none; }
   }
 {% endstylesheet %}
+
+{% javascript %}
+  const updateMobileMenuPosition = (menu) => {
+    const header = menu.closest('.m2-header');
+    if (!header) return;
+    menu.style.setProperty('--m2-menu-top', `${Math.max(0, header.getBoundingClientRect().bottom)}px`);
+  };
+
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('.m2-mobile-menu__panel a');
+    if (!link) return;
+    const menu = link.closest('details');
+    if (menu) menu.removeAttribute('open');
+  });
+  document.addEventListener('toggle', (event) => {
+    const menu = event.target.closest('.m2-mobile-menu');
+    if (!menu) return;
+    const summary = menu.querySelector('summary');
+    if (menu.open) updateMobileMenuPosition(menu);
+    summary.setAttribute('aria-label', menu.open ? menu.dataset.closeLabel : menu.dataset.openLabel);
+    summary.setAttribute('aria-expanded', menu.open ? 'true' : 'false');
+  }, true);
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.m2-mobile-menu[open]').forEach(updateMobileMenuPosition);
+  });
+  window.visualViewport?.addEventListener('resize', () => {
+    document.querySelectorAll('.m2-mobile-menu[open]').forEach(updateMobileMenuPosition);
+  });
+  document.addEventListener('keydown', (event) => {
+    const menu = document.querySelector('.m2-mobile-menu[open]');
+    if (!menu) return;
+    const summary = menu.querySelector('summary');
+    if (event.key === 'Escape') {
+      menu.removeAttribute('open');
+      summary.focus();
+      return;
+    }
+    if (event.key !== 'Tab') return;
+    const focusable = [summary, ...menu.querySelectorAll('.m2-mobile-menu__panel a[href]')];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+{% endjavascript %}
 
 {% schema %}
 {
   "name": "t:general.header",
   "settings": [
-    {
-      "type": "link_list",
-      "id": "menu",
-      "label": "t:labels.menu"
-    },
-    {
-      "type": "link_list",
-      "id": "customer_account_menu",
-      "label": "t:labels.customer_account_menu",
-      "default": "customer-account-main-menu"
-    }
+    { "type": "link_list", "id": "menu", "label": "t:labels.menu" },
+    { "type": "checkbox", "id": "show_topbar", "label": "t:labels.show_topbar", "default": false },
+    { "type": "text", "id": "topbar_text", "label": "t:labels.topbar_text", "default": "Vloeren leggen in Zuid-Holland" },
+    { "type": "text", "id": "brand_tagline", "label": "t:labels.brand_tagline", "default": "leveren · leggen · afwerken" },
+    { "type": "text", "id": "navigation_label", "label": "t:labels.navigation_label", "default": "Hoofdnavigatie" },
+    { "type": "text", "id": "menu_label", "label": "t:labels.mobile_menu_label", "default": "Menu" },
+    { "type": "text", "id": "home_label", "label": "t:labels.home_label", "default": "Home" },
+    { "type": "text", "id": "floors_label", "label": "t:labels.floors_label", "default": "Vloeren" },
+    { "type": "text", "id": "showroom_label", "label": "t:labels.showroom_label", "default": "Rijdende showroom" },
+    { "type": "text", "id": "projects_label", "label": "t:labels.projects_label", "default": "Projecten" },
+    { "type": "text", "id": "process_label", "label": "t:labels.process_label", "default": "Werkwijze" },
+    { "type": "text", "id": "about_label", "label": "t:labels.about_label", "default": "Over ons" },
+    { "type": "text", "id": "contact_label", "label": "t:labels.contact_label", "default": "Contact" },
+    { "type": "text", "id": "phone_label", "label": "t:labels.phone_label", "default": "Bel ons" },
+    { "type": "text", "id": "whatsapp_label", "label": "t:labels.whatsapp_button", "default": "App ons" }
   ]
 }
 {% endschema %}

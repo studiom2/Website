@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Warm modern interieur met houten vloer</title>
+  <desc id="desc">Gestileerde woonkamer met grote ramen, een lichte bank en een zorgvuldig gelegde warme vloer.</desc>
+  <defs>
+    <linearGradient id="wall" x1="250" y1="70" x2="1310" y2="880" gradientUnits="userSpaceOnUse"><stop stop-color="#F8F5EF"/><stop offset="1" stop-color="#E8DFD2"/></linearGradient>
+    <linearGradient id="floor" x1="780" y1="620" x2="800" y2="1100" gradientUnits="userSpaceOnUse"><stop stop-color="#CDBA9D"/><stop offset="1" stop-color="#967B5D"/></linearGradient>
+    <linearGradient id="glass" x1="400" y1="170" x2="600" y2="660" gradientUnits="userSpaceOnUse"><stop stop-color="#E9F0ED"/><stop offset="1" stop-color="#C8D4CF"/></linearGradient>
+  </defs>
+  <rect width="1600" height="1100" fill="#E4DBCE"/>
+  <path d="M125 78h1350v650H125z" fill="url(#wall)"/>
+  <path d="M125 728h1350l125 372H0L125 728Z" fill="url(#floor)"/>
+  <g stroke="#6D5945" stroke-opacity=".34" stroke-width="3">
+    <path d="m238 1100 278-372M522 1100l166-372M800 1100V728M1078 1100 912 728M1362 1100 1084 728"/>
+    <path d="M39 982h1522M77 870h1446M109 785h1382"/>
+  </g>
+  <path d="M125 728h1350" stroke="#2C2A25" stroke-width="14"/>
+  <rect x="255" y="142" width="504" height="507" rx="3" fill="#2B2A26"/>
+  <rect x="274" y="161" width="228" height="469" fill="url(#glass)"/>
+  <rect x="512" y="161" width="228" height="469" fill="url(#glass)"/>
+  <path d="M512 161v469" stroke="#2B2A26" stroke-width="10"/>
+  <path d="M275 515c92-67 161-94 228-111 72 13 149 54 237 136v90H275V515Z" fill="#A9B9AE" opacity=".55"/>
+  <circle cx="666" cy="242" r="45" fill="#F1DFC0" opacity=".85"/>
+  <rect x="968" y="165" width="340" height="16" rx="8" fill="#B49773"/>
+  <rect x="1018" y="225" width="239" height="297" rx="120" fill="#D8CCBA"/>
+  <path d="M1138 225v297" stroke="#B7A286" stroke-width="4"/>
+  <g>
+    <path d="M660 582h454c48 0 86 38 86 86v160H574V668c0-48 38-86 86-86Z" fill="#F7F4ED"/>
+    <path d="M610 727h554v135H610z" fill="#E9E2D7"/>
+    <rect x="628" y="602" width="250" height="151" rx="40" fill="#FEFCF8"/>
+    <rect x="888" y="602" width="250" height="151" rx="40" fill="#F4F0E8"/>
+    <rect x="583" y="666" width="50" height="208" rx="24" fill="#D7CBBB"/>
+    <rect x="1141" y="666" width="50" height="208" rx="24" fill="#D7CBBB"/>
+    <path d="M649 859v81M1130 859v81" stroke="#2C2A25" stroke-width="12"/>
+  </g>
+  <ellipse cx="942" cy="938" rx="262" ry="77" fill="#B7A58C" opacity=".38"/>
+  <ellipse cx="942" cy="889" rx="161" ry="45" fill="#6F5B47"/>
+  <path d="M812 889h260l-31 116H843l-31-116Z" fill="#2C2A25"/>
+  <path d="M1354 709v160" stroke="#2C2A25" stroke-width="12"/>
+  <path d="M1291 652c15-59 52-91 63-93 7 51-13 93-63 93Zm63-93c34 12 67 56 63 102-52-13-72-55-63-102Zm-2 66c-33 15-61 59-54 104 48-17 65-60 54-104Z" fill="#7B846F"/>
+  <path d="M1301 866h107l-18 109h-71l-18-109Z" fill="#B49773"/>
+</svg>

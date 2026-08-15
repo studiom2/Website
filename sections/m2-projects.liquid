@@ -1,0 +1,67 @@
+{% if section.settings.show_section %}
+  <section class="m2-section m2-projects full-width" id="projecten">
+    <div class="m2-container">
+      <div class="m2-section-heading">
+        <div><p class="m2-eyebrow">{{ section.settings.eyebrow | escape }}</p><h2>{{ section.settings.heading | escape }}</h2></div>
+        <div class="m2-section-heading__body">{{ section.settings.body }}</div>
+      </div>
+      <div class="m2-projects__grid">
+        {% for block in section.blocks %}
+          {% assign fallback_asset = block.settings.prototype_visual %}
+          <article class="m2-project" {{ block.shopify_attributes }}>
+            <div class="m2-project__media">
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy', widths: '420, 640, 900, 1200, 1500', sizes: '(min-width: 901px) 33vw, (min-width: 701px) 50vw, 100vw', alt: block.settings.image.alt }}
+              {% else %}
+                {% render 'm2-placeholder-visual', asset_name: fallback_asset, alt: block.settings.placeholder_label, width: 1000, height: 800 %}
+              {% endif %}
+              {% if request.design_mode and section.settings.prototype_label != blank %}<span>{{ section.settings.prototype_label | escape }}</span>{% endif %}
+            </div>
+            <div class="m2-project__meta">
+              <div>{% if block.settings.category != blank %}<p>{{ block.settings.category | escape }}</p>{% endif %}<h3>{{ block.settings.heading | escape }}</h3></div>
+              {% if block.settings.location != blank %}<span>{{ block.settings.location | escape }}</span>{% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% stylesheet %}
+  .m2-projects { background: var(--color-background); }
+  .m2-projects__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 2.5vw, 2.25rem); }
+  .m2-project__media { position: relative; overflow: hidden; border-radius: var(--radius-medium); background: color-mix(in srgb, var(--color-accent) 12%, var(--color-surface)); box-shadow: var(--shadow-card); }
+  .m2-project__media > img { width: 100%; aspect-ratio: 5 / 3.4; object-fit: cover; transition: transform 500ms ease; }
+  .m2-project:hover .m2-project__media > img { transform: scale(1.02); }
+  .m2-project__media > span { position: absolute; top: 1rem; left: 1rem; padding: .45rem .7rem; border-radius: 999px; color: var(--color-muted); background: color-mix(in srgb, var(--color-surface) 88%, transparent); font-size: .52rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; backdrop-filter: blur(8px); }
+  .m2-project__meta { padding: 1.25rem .25rem 0; display: flex; justify-content: space-between; gap: 1.5rem; }
+  .m2-project__meta p { margin: 0 0 .45rem; color: var(--color-accent-strong); font-size: .58rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+  .m2-project__meta h3 { margin: 0; font-size: 1.65rem; }
+  .m2-project__meta > span { padding-top: .25rem; color: var(--color-muted); font-size: .7rem; }
+  @media screen and (max-width: 900px) {
+    .m2-projects__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .m2-project:nth-child(3n) { grid-column: 1 / -1; }
+  }
+  @media screen and (max-width: 700px) {
+    .m2-projects__grid { grid-template-columns: minmax(0, 1fr); }
+    .m2-project:nth-child(3n) { grid-column: auto; }
+    .m2-project__media > img { aspect-ratio: 5 / 3.4; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:general.m2_projects",
+  "settings": [
+    { "type": "checkbox", "id": "show_section", "label": "t:labels.show_section", "default": true },
+    { "type": "text", "id": "eyebrow", "label": "t:labels.eyebrow", "default": "Recent vloerwerk" },
+    { "type": "text", "id": "heading", "label": "t:labels.heading", "default": "Bekijk wat we maken" },
+    { "type": "richtext", "id": "body", "label": "t:labels.body", "default": "<p>Hier komen binnenkort echte projecten van Studio m2.</p>" },
+    { "type": "text", "id": "prototype_label", "label": "t:labels.prototype_label", "default": "Tijdelijke visual" }
+  ],
+  "blocks": [{ "type": "project", "name": "t:general.project", "settings": [{ "type": "text", "id": "category", "label": "t:labels.category" }, { "type": "text", "id": "heading", "label": "t:labels.heading", "default": "PVC visgraat" }, { "type": "text", "id": "location", "label": "t:labels.location" }, { "type": "image_picker", "id": "image", "label": "t:labels.image" }, { "type": "select", "id": "prototype_visual", "label": "t:labels.prototype_visual", "options": [{ "value": "m2-project-light-loft.svg", "label": "t:options.project_visual.light_loft" }, { "value": "m2-project-warm-living.svg", "label": "t:options.project_visual.warm_living" }, { "value": "m2-project-minimal-kitchen.svg", "label": "t:options.project_visual.minimal_kitchen" }], "default": "m2-project-light-loft.svg" }, { "type": "text", "id": "placeholder_label", "label": "t:labels.placeholder_alt", "default": "Tijdelijke interieurillustratie voor een toekomstig project" }] }],
+  "max_blocks": 6,
+  "presets": [{ "name": "t:general.m2_projects", "blocks": [{ "type": "project", "settings": { "heading": "PVC visgraat", "prototype_visual": "m2-project-light-loft.svg", "placeholder_label": "Illustratie van een lichte woonkamer met vloer" } }, { "type": "project", "settings": { "heading": "Hongaarse punt", "prototype_visual": "m2-project-warm-living.svg", "placeholder_label": "Illustratie van een warme woonkamer met vloer" } }, { "type": "project", "settings": { "heading": "Rechte plank", "prototype_visual": "m2-project-minimal-kitchen.svg", "placeholder_label": "Illustratie van een minimalistische keuken met vloer" } }] }]
+}
+{% endschema %}

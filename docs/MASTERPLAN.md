@@ -6,12 +6,12 @@ Dit document is de centrale source of truth voor het project. Besluiten, statuss
 
 | Veld | Waarde |
 | --- | --- |
-| Versie | 0.3.0 |
+| Versie | 0.4.0 |
 | Datum | 2026-08-15 |
-| Projectstatus | DISCOVERY |
-| Huidige actieve taak | M2-DISC-005 |
+| Projectstatus | DEVELOPMENT — HOMEPAGE PROTOTYPE V1 DONE |
+| Huidige actieve taak | M2-DES-002 |
 
-Statuswaarden in dit document: `DONE`, `READY`, `ACTIVE`, `BLOCKED` en `TODO`.
+Taakstatuswaarden in het task register: `DONE`, `READY`, `ACTIVE`, `BLOCKED` en `TODO`. Hoofdstukken gebruiken daarnaast scope- en fasekwalificaties zoals `DISCOVERY`, `PROPOSED` of `IMPLEMENTED`.
 
 ## 1. Project vision
 
@@ -140,7 +140,8 @@ Aanwezige upstream e-commercebestanden worden in deze fase niet verwijderd of aa
 | Onderdeel | Waarde |
 | --- | --- |
 | Shopify store | `qpuig0-px.myshopify.com` |
-| Development theme ID | `203725832524` |
+| Development theme ID | `203725832524` — development; responsive homepage prototype v1 |
+| Live theme ID | `203723800908` — live; niet gewijzigd of gepubliceerd tijdens M2-DEV-002 |
 | GitHub | `studiom2/Website` |
 | Lokale map | `C:\Users\Admin\Desktop\STUDIO_M2\studio-m2-theme` |
 
@@ -263,7 +264,7 @@ Gebruik geen Bommelsvloerenbeelden voor productie.
 - Bellen en WhatsApp moeten prominent, duidelijk en technisch correct worden aangeboden zodra het definitieve telefoonnummer is bevestigd.
 - Een kort formulier kan offerte-/afspraakaanvragen ondersteunen; velden, verzendadres, opvolgproces, succesmelding en foutafhandeling zijn [NOG TE BEPALEN].
 - Conversie mag niet ten koste gaan van toegankelijkheid, duidelijkheid of vertrouwen.
-- Terminologie voor afspraak, advies, offerte en rijdende showroom moet consistent worden gekozen voordat content of ontwerp wordt gemaakt.
+- Voor launch wordt de definitieve terminologie voor afspraak, advies, offerte en rijdende showroom bevestigd en consistent toegepast; prototypecopy kan in M2-DES-002 en M2-DISC-005 verder worden verfijnd.
 
 ### 12.1 Rijdende showroom / stalenbezoek
 
@@ -292,17 +293,19 @@ Gebruik geen Bommelsvloerenbeelden voor productie.
 
 ## 13. Design system
 
-**Status: BLOCKED pending discovery.**
+**Status: HOMEPAGE PROTOTYPE V1 DONE — verdere visuele verfijning READY in M2-DES-002.**
 
-De huidige basis is zwart/wit en er bestaat een zwart-witlogo. Aanvullende kleuren zijn toegestaan, maar dit vormt nog geen definitief designbesluit. Geblokkeerd totdat officiële logo-assets, gewenste uitstraling en contentbehoeften zijn verzameld en beoordeeld.
+Voor het responsive homepage prototype v1 is een mobile-first visuele basis gebouwd met één centraal `.m2-container`-systeem, gedeelde spacingvariabelen en consistente componentstijlen. De homepagecopy is herschreven naar eenvoudige, menselijke en vloergerichte teksten. Tijdelijke lokale Studio m2 SVG-visuals ondersteunen de huidige presentatie en zijn via bestaande Theme Editor-image pickers vervangbaar.
+
+Dit is nog geen definitief websitebreed design system. Officiële logo-assets, definitieve fotografie, branding, kleuren, typografie en verdere desktopverfijning blijven open in M2-DES-002.
 
 ## 14. Theme architecture
 
-**Status: BLOCKED pending discovery/design.**
+**Status: HOMEPAGE-ARCHITECTUUR DONE — overige websitearchitectuur BLOCKED pending sitemap/content.**
 
-Templates, sections, blocks, globale settings en definitieve contentmodellen worden pas ontworpen nadat sitemap, contentmodel en designrichting zijn goedgekeurd. Shopify-product-, winkelwagen- en checkoutarchitectuur is niet nodig.
+Het homepage prototype v1 is modulair opgebouwd uit beheerbare Shopify-sections, blocks, globale settings, locales en een JSON-template. De homepage bevat geen Shopify-productcatalogus, productfunctionaliteit, winkelwagen of checkout. De gerealiseerde architectuur geldt uitsluitend voor de homepage; templates, pagina's en definitieve contentmodellen voor de rest van de website blijven afhankelijk van sitemap-, content- en SEO-besluiten.
 
-Voor prijs-/inspiratiekaarten is een voorlopig CMS-voorstel opgenomen in hoofdstuk 28. Dit is geen definitief architectuurbesluit en er wordt nog niets geïmplementeerd.
+Voor herbruikbare vloer-/inspiratiecontent blijft het voorlopige CMS- en metaobjectvoorstel in hoofdstuk 28 een toekomstig architectuurbesluit. De huidige homepagekaarten zijn pagina-specifiek via Theme Editor-blocks ingericht.
 
 ## 15. SEO
 
@@ -339,7 +342,7 @@ Juridische teksten moeten door de verantwoordelijke opdrachtgever of een bevoegd
 
 ## 18. Testing
 
-Per implementatietaak wordt bepaald welke controles relevant zijn. Voor oplevering omvat het testplan minimaal:
+Per implementatietaak wordt bepaald welke controles relevant zijn. Voor de definitieve website- en launchoplevering omvat het testplan minimaal:
 
 - [ ] **Responsive:** afgesproken mobiele, tablet- en desktopbreedtes
 - [ ] **Browser:** afgesproken actuele browsers en apparaten
@@ -352,9 +355,33 @@ Per implementatietaak wordt bepaald welke controles relevant zijn. Voor opleveri
 
 Concrete browsers, apparaten, breakpoints en acceptatiedrempels zijn [NOG TE BEPALEN].
 
+### 18.1 Homepage prototype v1 QA
+
+**Status: DONE — M2-QA-001**
+
+Uitgevoerd op 2026-08-15:
+
+- Responsive controle op `320`, `360`, `375`, `390`, `414`, `430`, `768`, `1024` en `1440` px.
+- Horizontale overflow is op alle genoemde viewports `0 px`.
+- Responsive header en vaste fullscreen mobiele navigatie getest; het menu is intern scrollbaar wanneer nodig.
+- Body-scroll-lock, sluiten via knop, Escape en navigatielinks, focus trap en focus-teruggave getest.
+- Hero, USP's, rijdende showroom, vloerenkaarten, inspiratiekaarten, werkwijze, projecten, vakmanschap, werkgebied, FAQ, afsluitende CTA en compacte footer gecontroleerd.
+- Eén theme-H1 en een logische headingstructuur bevestigd.
+- Interne ankers, telefoon-, WhatsApp-, e-mail- en Instagramlinks gecontroleerd; geen lege links aangetroffen.
+- Reviews blijven publiek verborgen en veroorzaken geen lege ruimte.
+- Ontwikkellabels voor tijdelijke visuals zijn buiten de Theme Editor verborgen.
+- Geen verzonnen reviews, prijsbedragen, projectresultaten, merken of garantieclaims toegevoegd.
+- Geen Shopify-product-, winkelwagen- of checkoutfunctionaliteit aan de homepage toegevoegd.
+- Shopify Theme Check en de officiële Shopify Liquid-validator zijn geslaagd.
+- Geen theme-eigen console-, JavaScript-, Liquid- of renderfouten aangetroffen; lokale Shopify-previewmeldingen van externe platformresources vallen buiten de theme-code.
+
+Deze afgeronde prototype-QA vervangt niet de nog open launchtests voor definitieve content, browsers/apparaten, performance, formulieren, analytics, consent en legal.
+
 ## 19. Launch
 
 **Status: TODO — pre-launch checklist wordt tijdens implementatie ingevuld.**
+
+Goedkeuring van het responsive homepage prototype v1 is geen launchgoedkeuring. De volledige website, overige pagina's, definitieve content, fotografie, branding, SEO, analytics, legal en expliciete live-publicatie blijven open. Live theme `203723800908` is tijdens deze fase niet gewijzigd.
 
 ### Content en configuratie
 
@@ -393,10 +420,13 @@ Mogelijke toekomstige fasen, optimalisaties en uitbreidingen worden hier pas toe
 | M2-DISC-002 | Referentie/voorbeeldwebsites analyseren | DONE | Bommelsvloeren-homepage functioneel en structureel geanalyseerd |
 | M2-DISC-003 | Concurrentie en positionering analyseren | READY | Bedrijfsrichting en primair werkgebied zijn nu voldoende bekend om analyse te starten |
 | M2-DISC-004 | Definitieve sitemap bepalen | BLOCKED | Wacht op resterende contentbevestiging, positionering en SEO-inzichten |
-| M2-DISC-005 | Launchgegevens en content bevestigen | READY | Huidige actieve taak; vereist aanvullende input van projecteigenaar |
-| M2-DES-001 | Designrichting bepalen | BLOCKED | Wacht op officiële merkassets en resterende launchcontent |
-| M2-ARCH-001 | Theme architectuur bepalen | BLOCKED | Wacht op definitieve sitemap, contentmodel en designrichting |
-| M2-DEV-001 | Implementatie starten | BLOCKED | Wacht op goedgekeurde designrichting en architectuur |
+| M2-DISC-005 | Launchgegevens en content bevestigen | READY | Launchvoorwaarde; vereist aanvullende input van projecteigenaar |
+| M2-DES-001 | Designrichting voor homepage prototype bepalen | DONE | Visuele richting van homepage prototype v1 is goedgekeurd; definitieve branding/content valt onder M2-DES-002 |
+| M2-ARCH-001 | Websitebrede theme architectuur bepalen | BLOCKED | Homepage-architectuur is gerealiseerd in M2-DEV-002; overige templates/contentmodellen wachten op sitemap en content |
+| M2-DEV-001 | Implementatie starten | DONE | Implementatie is gestart en de eerste afgebakende ontwikkeltaak is afgerond |
+| M2-DEV-002 | Responsive homepage prototype v1 | DONE | Volledige responsive homepage in development theme, beheerbaar via Theme Editor en zonder productcatalogus |
+| M2-QA-001 | Responsive homepage QA | DONE | Negen viewports, 0 px overflow, menu/FAQ/contactlinks en validators geslaagd |
+| M2-DES-002 | Visuele review en verdere verfijning | READY | Huidige actieve taak; echte assets/content, verdere desktopreview en overige pagina's blijven open |
 
 ### M2-GOV-001 — Projectbasis opzetten
 
@@ -411,6 +441,43 @@ Resultaat:
 - Eerste baseline-commit gepusht.
 - Shopify CLI gekoppeld.
 - Development theme actief.
+
+### M2-DEV-002 — Responsive homepage prototype v1
+
+**Status: DONE**
+
+Resultaat:
+
+- Volledige homepage opgebouwd uit modulaire sections en blocks.
+- Mobile-first responsive werking op mobiel, tablet en desktop.
+- Copy, visuals en sectie-inhoud beheerbaar via de Shopify Theme Editor.
+- Eén centraal `.m2-container`- en spacing-systeem toegepast.
+- Geen Shopify-productcatalogus, winkelwagen of checkout toegevoegd.
+- Uitsluitend development theme `203725832524` gebruikt; live theme `203723800908` niet gewijzigd.
+
+### M2-QA-001 — Responsive homepage QA
+
+**Status: DONE**
+
+Resultaat:
+
+- Getest op `320`, `360`, `375`, `390`, `414`, `430`, `768`, `1024` en `1440` px.
+- Horizontale overflow op alle genoemde viewports `0 px`.
+- Mobiele navigatie, body-scroll-lock, FAQ en contactlinks functioneel getest.
+- Focus trap, focus-teruggave, Escape en sluitroutes gecontroleerd.
+- Shopify Theme Check en officiële Shopify Liquid-validatie geslaagd.
+
+### M2-DES-002 — Visuele review en verdere verfijning
+
+**Status: READY — huidige actieve taak**
+
+Open onderdelen:
+
+- Echte fotografie.
+- Definitieve branding en officiële logo-assets.
+- Verdere desktopreview en visuele verfijning.
+- Echte vloer-, prijs- en projectcontent.
+- Overige pagina's en websitebrede content.
 
 ## 22. Decision log
 
@@ -505,28 +572,21 @@ Open vragen blijven `[NOG TE BEPALEN]` totdat het antwoord is aangeleverd, gever
 
 ## 24. Current active task
 
-**M2-DISC-005 — Launchgegevens en content bevestigen**
+**M2-DES-002 — Visuele review en verdere verfijning**
 
 - Status: `READY`.
-- `M2-DISC-001 — Bedrijfsinformatie verzamelen` is afgerond en staat op `DONE`.
-- `M2-DISC-002 — Referentie/voorbeeldwebsites analyseren` is afgerond en staat op `DONE`.
+- `M2-DEV-002 — Responsive homepage prototype v1` is afgerond en staat op `DONE`.
+- `M2-QA-001 — Responsive homepage QA` is afgerond en staat op `DONE`.
 
-M2-DISC-005 omvat minimaal:
+M2-DES-002 omvat minimaal:
 
-- Definitief telefoonnummer.
-- Definitief e-mailadres.
-- TikTok-URL.
-- Officiële logobestanden.
-- Definitieve vloercategorieën.
-- Bevestiging van traprenovatie en laminaat.
-- Fotografie volgens de shotlist.
-- Echte, publiceerbare reviews.
-- Definitieve prijsgegevens en prijsaanduiding.
-- Eventuele openingstijden/bereikbaarheid.
-- Juridische bedrijfsnaam en KvK indien nodig.
-- Definitief werkgebied voor launch en SEO.
+- Echte fotografie volgens de shotlist.
+- Definitieve branding en officiële logo-assets.
+- Verdere desktopreview en visuele verfijning.
+- Echte vloer-, prijs- en projectcontent.
+- Overige pagina's en websitebrede content.
 
-Er start geen design- of implementatiewerk voordat de daarvoor noodzakelijke discovery-uitkomsten zijn vastgelegd en beoordeeld.
+`M2-DISC-005 — Launchgegevens en content bevestigen` blijft parallel op `READY` en blijft een launchvoorwaarde voor onder andere definitieve contactgegevens, TikTok, categorieën, reviews, prijzen, juridische gegevens en het launchwerkgebied. De volledige website en live-publicatie zijn niet afgerond.
 
 ## 25. Reference analysis — Bommelsvloeren
 
@@ -555,9 +615,11 @@ Belangrijkste bronbeperking:
 
 ## 26. Feature requirements
 
-**Status: PROPOSED — te valideren tijdens verdere discovery.**
+**Status: HOMEPAGE-SUBSET IMPLEMENTED — volledige websitefeaturematrix blijft PROPOSED.**
 
 De volledige feature matrix en motivatie staan in [`REFERENCE_ANALYSIS_BOMMELSVLOEREN.md`](./REFERENCE_ANALYSIS_BOMMELSVLOEREN.md#14-studio-m2-feature-matrix).
+
+M2-DEV-002 realiseert uitsluitend de responsive homepage-subset. Eigen pagina's, formulieren, definitieve SEO/metadata, echte projecten, echte reviews en definitieve content blijven open en mogen niet op basis van het prototype als afgerond worden beschouwd.
 
 ### MUST
 
@@ -603,28 +665,30 @@ De volledige feature matrix en motivatie staan in [`REFERENCE_ANALYSIS_BOMMELSVL
 
 ## 27. Preliminary homepage blueprint
 
-**Status: PROPOSED — input voor M2-DISC-004 en M2-DES-001.**
+**Status: STRUCTUUR DONE VOOR M2-DEV-002 — definitieve content en overige pagina's TODO.**
 
 1. Header met compacte trust/contactinformatie en prominente bel-/WhatsApp-routes.
-2. Hero met eigen waardepropositie, eigen fotografie en primaire contact-CTA.
-3. Positionering/USP-strip: vakmanschap, afspraken nakomen, brede mogelijkheden en volledige ontzorging.
-4. Rijdende showroom: bus, stalen, klantvoordeel, serieuze-interessecontext en contactroute.
+2. Hero met goedgekeurde prototypecopy, contact-CTA's en een via de Theme Editor vervangbare tijdelijke visual.
+3. Positionering/USP-strip met eenvoudige, menselijke en vloergerichte teksten.
+4. Rijdende showroom met stalenbezoekcontext, contactroute en vervangbare tijdelijke visual.
 5. Vloersoorten als informatieve categoriekaarten zonder Shopify-productlogica.
-6. Optioneel prijs-/inspiratiekaartenblok zonder Shopify-products [PROPOSED; content NOG TE BEPALEN].
+6. Duidelijk gemarkeerde inspiratievoorbeelden zonder Shopify-products; echte namen, beelden en prijzen [NOG TE BEPALEN].
 7. Volledige werkwijze: contact, advies/stalen, voorbereiding, leveren indien van toepassing, leggen en afwerking.
-8. Uitgelichte projecten met echte Studio m2-beelden.
+8. Projectstructuur met tijdelijke illustraties, zonder fake klant-, regio- of resultaatgegevens; echte Studio m2-projecten [NOG TE BEPALEN].
 9. Vakmanschap / Over Studio m2.
-10. Reviews/social proof, alleen zichtbaar zodra echte en publiceerbare reviews beschikbaar zijn.
-11. Werkgebied en behulpzame lokale SEO-content op basis van bevestigd launchwerkgebied.
+10. Beheerbare reviews/social proof, publiek verborgen totdat echte en publiceerbare reviews beschikbaar zijn.
+11. Werkgebied op basis van de bevestigde huidige richting; definitieve lokale SEO-content blijft open.
 12. FAQ-preview.
-13. Afsluitende contact-CTA met bellen en WhatsApp primair en offerte/afspraak secundair.
+13. Afsluitende contact-CTA met bellen en WhatsApp.
 14. Footer met navigatie, vloeren/diensten, contact, bedrijfsgegevens, socials en privacy.
 
-De definitieve volgorde, inhoud en CTA-hiërarchie blijven geblokkeerd op resterende launchgegevens, doelgroepinzichten, beschikbare fotografie en contentgoedkeuring.
+Deze volgorde en CTA-hiërarchie zijn goedgekeurd voor homepage prototype v1. Tijdelijke lokale Studio m2 SVG-visuals zijn aanwezig en via de Theme Editor vervangbaar. Verdere visuele verfijning, definitieve fotografie, echte vloer-/prijs-/projectcontent, contactvalidatie en overige pagina's blijven open in M2-DES-002 en M2-DISC-005.
+
+Definitieve fotografie, projectinformatie, vloernamen, prijzen, reviews, contactvalidatie en juridische gegevens zijn nog niet afgerond.
 
 ## 28. Floor / collection requirements
 
-**Status: PROPOSED — geen implementatie- of architectuurbesluit.**
+**Status: HOMEPAGE PROTOTYPE IMPLEMENTED — definitieve content en herbruikbare CMS-architectuur PROPOSED.**
 
 ### 28.1 Voorlopige categorieën
 
@@ -640,6 +704,8 @@ De relatie tussen materiaalsoorten, patronen en diensten moet in M2-DISC-004 wor
 
 ### 28.2 Prijs-/inspiratiekaarten
 
+Voor homepage prototype v1 zijn pagina-specifieke vloer- en inspiratiekaarten als beheerbare Theme Editor-blocks geïmplementeerd. De inspiratiekaarten tonen uitsluitend duidelijk herkenbare voorbeeldinhoud met lege prijsplaceholders; er zijn geen echte prijzen gepubliceerd.
+
 Studio m2 staat open voor beheerbare kaarten met mogelijk:
 
 - Afbeelding.
@@ -654,7 +720,7 @@ Nog [NOG TE BEPALEN]: definitieve vloernamen, prijzen, afbeeldingen, prijsformat
 
 ### 28.3 Voorlopig Shopify CMS-architectuurvoorstel
 
-Voorkeursrichting voor M2-ARCH-001:
+Onderstaand voorstel geldt voor een toekomstige herbruikbare, websitebrede architectuur en niet voor de reeds gebouwde pagina-specifieke prototypeblocks. Voorkeursrichting voor M2-ARCH-001:
 
 1. Gebruik een metaobjectdefinitie voor herbruikbare vloer-/inspiratie-items wanneer dezelfde data op meerdere pagina's of in meerdere sections moet kunnen verschijnen.
 2. Laat een Theme Editor-section een handmatige selectie en volgorde van deze items beheren.

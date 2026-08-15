@@ -13,10 +13,16 @@
   "sections": {
     "header": {
       "type": "header",
-      "settings": {}
+      "settings": {
+        "show_topbar": false,
+        "topbar_text": "Vloeren leggen in Zuid-Holland",
+        "brand_tagline": "leveren · leggen · afwerken",
+        "phone_label": "Bel ons",
+        "whatsapp_label": "App ons"
+      }
     }
   },
   "order": [
     "header"
-  ],
+  ]
 }

@@ -15,7 +15,9 @@
       "type": "footer",
       "settings": {
         "menu": "",
-        "show_payment_icons": true
+        "tagline": "Vloeren leveren, leggen en afwerken in Zuid-Holland.",
+        "invert_logo": false,
+        "area_text": "Delft, Den Haag, Rotterdam en het Westland"
       }
     }
   },

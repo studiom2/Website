@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Licht interieur als vloerinspiratie</title><desc id="desc">Abstracte lichte woonkamer met zachte zandtinten en naturel plankenvloer.</desc>
+  <defs><linearGradient id="wall" x1="111" y1="42" x2="882" y2="637" gradientUnits="userSpaceOnUse"><stop stop-color="#FBF8F2"/><stop offset="1" stop-color="#DDD0BE"/></linearGradient></defs>
+  <rect width="1000" height="800" fill="url(#wall)"/>
+  <path d="M0 545h1000v255H0z" fill="#C9B18E"/>
+  <g stroke="#80684E" stroke-opacity=".42" stroke-width="3"><path d="M0 626h1000M0 707h1000M120 545 35 800M340 545l-30 255M560 545l30 255M780 545l85 255"/></g>
+  <rect x="104" y="96" width="295" height="337" fill="#B9C6C1" stroke="#2C2A25" stroke-width="10"/>
+  <path d="M251 101v327M109 303h285" stroke="#F7F4ED" stroke-width="8"/>
+  <circle cx="337" cy="169" r="41" fill="#F4E4C7"/>
+  <path d="M535 413h297c43 0 78 35 78 78v141H457V491c0-43 35-78 78-78Z" fill="#F6F1E8"/>
+  <rect x="481" y="438" width="205" height="104" rx="36" fill="#FEFCF8"/><rect x="694" y="438" width="192" height="104" rx="36" fill="#E8DFD3"/>
+  <rect x="435" y="502" width="47" height="151" rx="23" fill="#D6C7B3"/><rect x="884" y="502" width="47" height="151" rx="23" fill="#D6C7B3"/>
+  <ellipse cx="648" cy="691" rx="191" ry="47" fill="#887158" opacity=".32"/>
+  <ellipse cx="646" cy="647" rx="106" ry="27" fill="#6D5946"/><path d="m573 652 21 94M718 652l-22 94" stroke="#2C2A25" stroke-width="9"/>
+</svg>

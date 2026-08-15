@@ -1,0 +1,61 @@
+{% if section.settings.show_section %}
+  <section class="m2-section m2-craft full-width" id="over-ons">
+    <div class="m2-container m2-craft__grid">
+      <div class="m2-craft__copy">
+        <p class="m2-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        <h2>{{ section.settings.heading | escape }}</h2>
+        <div class="m2-rte">{{ section.settings.body }}</div>
+        {% if section.settings.secondary_text != blank %}<p class="m2-craft__secondary">{{ section.settings.secondary_text | escape }}</p>{% endif %}
+      </div>
+      <div class="m2-craft__visual">
+        <div class="m2-craft__image">
+          {% if section.settings.image != blank %}
+            {{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1200, 1400', sizes: '(min-width: 851px) 50vw, 100vw', alt: section.settings.image.alt }}
+          {% else %}
+            {% render 'm2-placeholder-visual', asset_name: 'm2-craftsmanship-installer.svg', alt: section.settings.placeholder_label, width: 1200, height: 900 %}
+          {% endif %}
+        </div>
+        {% if request.design_mode and section.settings.prototype_label != blank %}<span class="m2-craft__prototype">{{ section.settings.prototype_label | escape }}</span>{% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% stylesheet %}
+  .m2-craft { background: var(--color-surface); }
+  .m2-craft__grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: clamp(2.75rem, 7vw, 7rem); }
+  .m2-craft__copy h2 { max-width: 11ch; margin: 1rem 0 1.5rem; font-size: clamp(2.8rem, 5.5vw, 5.8rem); line-height: .96; }
+  .m2-craft__copy .m2-rte { max-width: 31rem; color: var(--color-muted); line-height: 1.75; }
+  .m2-craft__secondary { max-width: 31rem; margin: 1.5rem 0 0; padding: 1rem 0 0; color: var(--color-foreground); border-top: 1px solid var(--color-border); font-size: .88rem; font-weight: 650; line-height: 1.65; }
+  .m2-craft__visual { position: relative; padding: 1.25rem 1.25rem 0 0; }
+  .m2-craft__visual::before { content: ''; position: absolute; inset: 0 0 12% 12%; border-radius: var(--radius-large); background: color-mix(in srgb, var(--color-accent) 20%, var(--color-background)); }
+  .m2-craft__image { position: relative; overflow: hidden; aspect-ratio: 4 / 3; border-radius: var(--radius-large); box-shadow: var(--shadow-soft); }
+  .m2-craft__image > img { width: 100%; height: 100%; object-fit: cover; }
+  .m2-craft__prototype { position: absolute; top: 2.3rem; right: 2.3rem; padding: .45rem .7rem; border-radius: 999px; color: var(--color-muted); background: color-mix(in srgb, var(--color-surface) 86%, transparent); font-size: .52rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; backdrop-filter: blur(8px); }
+  @media screen and (max-width: 850px) {
+    .m2-craft__grid { grid-template-columns: minmax(0, 1fr); }
+    .m2-craft__visual { max-width: 43rem; order: -1; }
+  }
+  @media screen and (max-width: 520px) {
+    .m2-craft__visual { padding: .65rem .65rem 0 0; }
+    .m2-craft__image { border-radius: var(--radius-medium); }
+    .m2-craft__prototype { top: 1.2rem; right: 1.2rem; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:general.m2_craft",
+  "settings": [
+    { "type": "checkbox", "id": "show_section", "label": "t:labels.show_section", "default": true },
+    { "type": "text", "id": "eyebrow", "label": "t:labels.eyebrow", "default": "Studio m2 vloeren" },
+    { "type": "text", "id": "heading", "label": "t:labels.heading", "default": "Van ondervloer tot plint" },
+    { "type": "richtext", "id": "body", "label": "t:labels.body", "default": "<p>We kunnen de hele klus doen: oude vloer eruit, egaliseren, vloer leveren, leggen en afwerken. Heb je zelf al een vloer gekocht? Dan pakken we alleen het legwerk op.</p>" },
+    { "type": "text", "id": "secondary_text", "label": "t:labels.featured_text", "default": "Je hebt één aanspreekpunt en weet vooraf waar je aan toe bent." },
+    { "type": "image_picker", "id": "image", "label": "t:labels.image" },
+    { "type": "text", "id": "placeholder_label", "label": "t:labels.placeholder_alt", "default": "Illustratie van zorgvuldig vloerlegwerk" },
+    { "type": "text", "id": "prototype_label", "label": "t:labels.prototype_label", "default": "Tijdelijke visual" }
+  ],
+  "presets": [{ "name": "t:general.m2_craft" }]
+}
+{% endschema %}

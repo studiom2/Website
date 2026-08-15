@@ -1,20 +1,149 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
-      "settings": {}
+    "hero": {
+      "type": "m2-hero",
+      "settings": {
+        "eyebrow": "Vloeren in Zuid-Holland",
+        "heading": "Een strakke vloer, goed gelegd.",
+        "body": "<p>Van oude vloer eruit tot egaliseren, leggen en plinten. We leveren de vloer, maar leggen ook materiaal dat je zelf al hebt.</p>",
+        "primary_label": "WhatsApp ons",
+        "secondary_label": "Bel ons",
+        "tertiary_label": "Bekijk de vloeren",
+        "tertiary_link": "#vloeren",
+        "placeholder_label": "Illustratie van een licht interieur met een warme vloer"
+      }
+    },
+    "usps": {
+      "type": "m2-usps",
+      "blocks": {
+        "usp_1": { "type": "usp", "settings": { "heading": "Vloer leveren én leggen", "body": "We kunnen de complete klus voor je regelen." } },
+        "usp_2": { "type": "usp", "settings": { "heading": "Egaliseren en plinten", "body": "Ook de voorbereiding en afwerking kunnen we doen." } },
+        "usp_3": { "type": "usp", "settings": { "heading": "Zelf een vloer gekocht?", "body": "Dan verzorgen we gewoon alleen het legwerk." } },
+        "usp_4": { "type": "usp", "settings": { "heading": "Afspraak is afspraak", "body": "We zeggen wat we doen en doen wat we zeggen." } }
+      },
+      "block_order": ["usp_1", "usp_2", "usp_3", "usp_4"],
+      "settings": { "show_section": true, "heading": "Waarom Studio m2" }
+    },
+    "showroom": {
+      "type": "m2-showroom",
+      "settings": {
+        "show_section": true,
+        "eyebrow": "Rijdende showroom",
+        "heading": "Vloeren bekijken in je eigen huis",
+        "body": "<p>App of bel ons en vertel wat je zoekt. Als het past, komen we met stalen langs. Zo zie je thuis meteen welke kleur en structuur goed werken. Daarna krijg je een duidelijke offerte.</p>",
+        "placeholder_label": "Illustratie van de rijdende showroom met vloerstaaltjes naast een woning",
+        "prototype_label": "Tijdelijke visual",
+        "caption": "Een stalenbezoek doen we bij een concrete vloerwens. Het bezoek en de offerte zijn kosteloos.",
+        "button_label": "App ons over je vloer"
+      }
+    },
+    "floor_types": {
+      "type": "m2-floor-types",
+      "blocks": {
+        "floor_1": { "type": "floor", "settings": { "heading": "PVC", "body": "Sterk, stil en makkelijk in onderhoud. Verkrijgbaar in veel kleuren en patronen.", "prototype_visual": "m2-floor-pvc.svg", "placeholder_label": "Illustratie van warme PVC-planken", "button_label": "Bekijk de mogelijkheden" } },
+        "floor_2": { "type": "floor", "settings": { "heading": "Visgraat", "body": "Een klassiek patroon dat veel sfeer geeft. We leggen het strak en werken het netjes af.", "prototype_visual": "m2-floor-visgraat.svg", "placeholder_label": "Illustratie van een vloer in visgraatpatroon", "button_label": "Bekijk de mogelijkheden" } },
+        "floor_3": { "type": "floor", "settings": { "heading": "Hongaarse punt", "body": "Net wat rustiger dan visgraat, met een strakke schuine lijn.", "prototype_visual": "m2-floor-hongaarse-punt.svg", "placeholder_label": "Illustratie van een vloer in Hongaarse punt", "button_label": "Bekijk de mogelijkheden" } },
+        "floor_4": { "type": "floor", "settings": { "heading": "Rechte plank", "body": "Rustig, tijdloos en passend in bijna ieder interieur.", "prototype_visual": "m2-floor-rechte-plank.svg", "placeholder_label": "Illustratie van een vloer met rechte planken", "button_label": "Bekijk de mogelijkheden" } }
+      },
+      "block_order": ["floor_1", "floor_2", "floor_3", "floor_4"],
+      "settings": {
+        "show_section": true,
+        "heading": "Welke vloer past bij jou?",
+        "body": "<p>Van rustige planken tot visgraat en Hongaarse punt. We laten je graag zien wat er mogelijk is.</p>",
+        "prototype_label": "Tijdelijke visual"
+      }
+    },
+    "inspiration": {
+      "type": "m2-inspiration",
+      "blocks": {
+        "example_1": { "type": "example", "settings": { "heading": "Voorbeeld vloer 01", "price": "Vanaf € --,-- / m²", "prototype_visual": "m2-inspiration-sand.svg", "placeholder_label": "Lichte interieurillustratie met een zandkleurige vloer", "button_label": "Vraag een offerte aan" } },
+        "example_2": { "type": "example", "settings": { "heading": "Voorbeeld vloer 02", "price": "Vanaf € --,-- / m²", "prototype_visual": "m2-inspiration-oak.svg", "placeholder_label": "Warme interieurillustratie met een eikenkleurige vloer", "button_label": "Vraag een offerte aan" } },
+        "example_3": { "type": "example", "settings": { "heading": "Voorbeeld vloer 03", "price": "Vanaf € --,-- / m²", "prototype_visual": "m2-inspiration-stone.svg", "placeholder_label": "Minimalistische interieurillustratie met een steenachtige vloer", "button_label": "Vraag een offerte aan" } }
+      },
+      "block_order": ["example_1", "example_2", "example_3"],
+      "settings": {
+        "show_section": true,
+        "heading": "Een idee van wat er mogelijk is",
+        "body": "<p>Deze voorbeelden worden later vervangen door echte vloeren en actuele prijzen.</p>",
+        "demo_label": "Voorbeeldinhoud"
+      }
+    },
+    "process": {
+      "type": "m2-process",
+      "blocks": {
+        "step_1": { "type": "step", "settings": { "heading": "App of bel ons", "body": "Vertel kort wat je zoekt en wat de situatie is." } },
+        "step_2": { "type": "step", "settings": { "heading": "We bespreken de klus", "body": "We kijken naar de vloer, de ondergrond en de gewenste afwerking." } },
+        "step_3": { "type": "step", "settings": { "heading": "Stalen bekijken", "body": "Bij serieuze interesse komen we met passende stalen langs." } },
+        "step_4": { "type": "step", "settings": { "heading": "Duidelijke offerte", "body": "Je ziet vooraf wat we leveren en welke werkzaamheden we uitvoeren." } },
+        "step_5": { "type": "step", "settings": { "heading": "Voorbereiden", "body": "We verwijderen en egaliseren waar dat nodig is." } },
+        "step_6": { "type": "step", "settings": { "heading": "Leggen en afwerken", "body": "We leggen de vloer en plaatsen de plinten." } },
+        "step_7": { "type": "step", "settings": { "heading": "Netjes opleveren", "body": "Als het werk klaar is, leveren we de ruimte netjes op." } }
+      },
+      "block_order": ["step_1", "step_2", "step_3", "step_4", "step_5", "step_6", "step_7"],
+      "settings": { "show_section": true, "heading": "Zo werken we" }
+    },
+    "projects": {
+      "type": "m2-projects",
+      "blocks": {
+        "project_1": { "type": "project", "settings": { "heading": "PVC visgraat", "prototype_visual": "m2-project-light-loft.svg", "placeholder_label": "Illustratie van een lichte woonkamer met vloer" } },
+        "project_2": { "type": "project", "settings": { "heading": "Hongaarse punt", "prototype_visual": "m2-project-warm-living.svg", "placeholder_label": "Illustratie van een warme woonkamer met vloer" } },
+        "project_3": { "type": "project", "settings": { "heading": "Rechte plank", "prototype_visual": "m2-project-minimal-kitchen.svg", "placeholder_label": "Illustratie van een minimalistische keuken met vloer" } }
+      },
+      "block_order": ["project_1", "project_2", "project_3"],
+      "settings": {
+        "show_section": true,
+        "eyebrow": "Recent vloerwerk",
+        "heading": "Bekijk wat we maken",
+        "body": "<p>Hier komen binnenkort echte projecten van Studio m2.</p>",
+        "prototype_label": "Tijdelijke visual"
+      }
+    },
+    "craft": {
+      "type": "m2-craft",
+      "settings": {
+        "show_section": true,
+        "eyebrow": "Studio m2 vloeren",
+        "heading": "Van ondervloer tot plint",
+        "body": "<p>We kunnen de hele klus doen: oude vloer eruit, egaliseren, vloer leveren, leggen en afwerken. Heb je zelf al een vloer gekocht? Dan pakken we alleen het legwerk op.</p>",
+        "secondary_text": "Je hebt één aanspreekpunt en weet vooraf waar je aan toe bent.",
+        "placeholder_label": "Illustratie van een vakman die een vloer zorgvuldig afwerkt",
+        "prototype_label": "Tijdelijke visual"
+      }
+    },
+    "reviews": {
+      "type": "m2-reviews",
+      "settings": { "show_section": false, "eyebrow": "Ervaringen", "heading": "Wat klanten vertellen." }
+    },
+    "service_area": {
+      "type": "m2-service-area",
+      "settings": {
+        "show_section": true,
+        "heading": "We werken in Zuid-Holland",
+        "body": "<p>We werken vooral in Delft, Den Haag, Rotterdam en het Westland.</p>",
+        "visual_alt": "Abstracte kaartillustratie van het werkgebied in Zuid-Holland",
+        "prototype_label": "Indicatieve visual"
+      }
+    },
+    "faq": {
+      "type": "m2-faq",
+      "blocks": {
+        "faq_1": { "type": "question", "settings": { "question": "Leggen jullie ook een vloer die ik zelf heb gekocht?", "answer": "<p>Ja. We kunnen alleen het legwerk doen, maar ook de complete klus verzorgen.</p>" } },
+        "faq_2": { "type": "question", "settings": { "question": "Kunnen jullie ook egaliseren?", "answer": "<p>Ja. Als de ondervloer dat nodig heeft, kunnen we hem egaliseren voordat we gaan leggen.</p>" } },
+        "faq_3": { "type": "question", "settings": { "question": "Komen jullie met stalen aan huis?", "answer": "<p>Ja. Bij serieuze interesse kunnen we met stalen langskomen, zodat je de kleuren en structuren thuis kunt bekijken.</p>" } }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3"],
+      "settings": { "show_section": true, "heading": "Veelgestelde vragen" }
+    },
+    "final_cta": {
+      "type": "m2-final-cta",
+      "settings": {
+        "show_section": true,
+        "heading": "Even overleggen over je vloer?",
+        "body": "App of bel ons en vertel kort wat je wilt. Dan bespreken we wat er nodig is.",
+        "whatsapp_label": "WhatsApp ons",
+        "phone_label": "Bel ons"
+      }
     }
   },
-  "order": [
-    "main"
-  ]
+  "order": ["hero", "usps", "showroom", "floor_types", "inspiration", "process", "projects", "craft", "reviews", "service_area", "faq", "final_cta"]
 }
